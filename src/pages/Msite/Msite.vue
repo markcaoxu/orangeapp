@@ -1,62 +1,72 @@
 <template>
   <div id="app">
-    <section class="section-swiper">
-      <mt-swipe :auto="5000">
-        <mt-swipe-item v-for="(item,index) in arrItem" :key="index">
-          <img class="swiperImg" :src=item.img alt="">
-        </mt-swipe-item>
-      </mt-swipe>
-    </section>
-    <Button />
-		<SeachHeader />
+    <div class="app">
 
+      <!-- 引入header组件 -->
+      <div class="header"><Header /></div>
+
+      <!-- 引入swiper组件 -->
+      <div class="section-swiper"><Swiper /></div>
+
+      <!-- 引入button组件 -->
+      <div class="button"><Button /></div>
+
+      <!-- 引入FunctionalArea组件 -->
+      <div class="FunctionalArea"><FunctionalArea /></div>
+
+    </div>
   </div>
 </template>
 <script>
 // 引入button组件
 import Button from "../../components/msite/Button"
-//引入SeachHeader组件
-import SeachHeader from "../../components/msite/SeachHeader"
-
+// 引入FunctionalArea组件
+import FunctionalArea from "../../components/msite/FunctionalArea"
+// 引入Swiper组件
+import Swiper from "../../components/msite/Swiper"
+// 引入Header组件
+import Header from "../../components/msite/Header"
 export default {
   components: {
-		Button,
-		SeachHeader
-  },
-  data () {
-    return {
-      arrItem: [
-        { "img": "https://image.juooo.com/group1/M00/02/D0/rAoKmV0jZLGAJdhoAAC7oyPNYIU699.png" },
-        { "img": "https://image.juooo.com/group1/M00/03/D1/rAoKNV2hj3WAa1r3AAD7rN0NU3M686.jpg" },
-        { "img": "https://image.juooo.com/group1/M00/02/97/rAoKNVxjdjKAFQokAAGe8ctbisc973.jpg" },
-        { "img": "https://image.juooo.com/group1/M00/03/CD/rAoKNV2eopmAWAq5AAFgaTUu0hI903.jpg" },
-        { "img": "https://image.juooo.com/group1/M00/03/20/rAoKmV2RcbKAFGy-AACn2tMeRXE082.jpg" },
-        { "img": "https://image.juooo.com/group1/M00/03/CB/rAoKNV2b61OAAXSQAAE2p_m5Kn0012.jpg" },
-        { "img": "https://image.juooo.com/group1/M00/03/BE/rAoKNV2B46GAM6TMAAE2152MCko633.jpg" },
-        { "img": "https://image.juooo.com/group1/M00/03/11/rAoKmV1-54yAKQl1AAEOjBe2O2g630.jpg" },
-      ]
-    }
+    Button,
+    FunctionalArea,
+    Swiper,
+    Header
   }
 }
 </script>
-
 <style lang='stylus' rel='stylesheet/stylus'>
-#app
-  height 100%
-  position relative
-.section-swiper
-  width 100%
-  height 30%
-  .mint-swipe
-    height 100%
-    .mint-swipe-items-wrap
-      background-color red
-      .mint-swipe-item
-        width 100%
-        background-color blue
-        .swiperImg
-          width 100%
-          height 100%
-    .mint-swipe-indicators
-      color white
+.app
+	width 100%
+	height 100%
+	position relative
+	.header
+		width 100%
+		height 10%
+		position absolute
+		top 0
+		left 0
+		z-index 5
+	.section-swiper
+		width 100%
+		height 55%
+		position absolute
+		top 0
+		left 0
+		z-index 4
+	.button
+		width 100%
+		height 20%
+		position absolute
+		top 30%
+		left 0
+		z-index 3
+	.FunctionalArea
+		width 100%
+		height 50%
+		position absolute
+		top 90%
+		left 0
+		z-index 2
+
 </style>
