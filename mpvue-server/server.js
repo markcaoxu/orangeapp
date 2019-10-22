@@ -61,6 +61,14 @@ koaRouter.get('/cinemas_info',(ctx)=>{
     cinemasInfo
   }
 })
+// 请求详情列表的接口
+// koaRouter.get('get_msite_detail',(ctx)=>{
+//   const msiteDetail = msite.Home
+//   ctx.body={
+//     msiteDetail
+//   }
+// })
+
 // 声明使用所有的路由及路由的相关的所有的方法
 koa
   .use(koaRouter.routes())
