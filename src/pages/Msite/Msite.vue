@@ -63,9 +63,9 @@ export default {
 		z-index 3
 	.FunctionalArea
 		width 100%
-		height 90%
+		height 50%
 		position absolute
-		top 10%
+		top 90%
 		left 0
 		z-index 2
 

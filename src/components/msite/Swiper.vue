@@ -30,7 +30,7 @@ export default {
 <style lang='stylus'>
 .section-swiper
   width 100%
-  height 30%
+  height 100%
   position absolute
   left 0
   top 0
@@ -41,6 +41,7 @@ export default {
       background-color white
       .mint-swipe-item
         width 100%
+				height 100%
         background-color blue
         .swiperImg
           width 100%

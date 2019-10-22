@@ -1,26 +1,37 @@
 <template>
   <div id='app'>
     <section class="button-list">
+
+			<!-- 演唱会 -->
       <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.VocalConcert.img alt="">
         <span class="button-text">{{button.VocalConcert.name}}</span>
       </div>
+
+			<!-- 音乐剧 -->
       <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.MusicalPlay.img alt="">
         <span class="button-text">{{button.MusicalPlay.name}}</span>
       </div>
+
+			<!-- 舞台剧 -->
       <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.LivingTheatre.img alt="">
         <span class="button-text">{{button.LivingTheatre.name}}</span>
       </div>
+
+			<!-- 儿童剧 -->
       <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.DramaForChildren.img alt="">
         <span class="button-text">{{button.DramaForChildren.name}}</span>
       </div>
+
+			<!-- 音乐会 -->
       <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.Concert.img alt="">
         <span class="button-text">{{button.Concert.name}}</span>
       </div>
+			
     </section>
   </div>
 </template>
