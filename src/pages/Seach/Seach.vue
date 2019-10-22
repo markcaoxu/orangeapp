@@ -12,7 +12,7 @@
       <input
         v-model="inputText"
         class="input-text"
-        @keyup.13="centerText"
+        @keyup.enter="centerText"
         type="text"
         placeholder="请输入搜索内容"
       />
@@ -28,14 +28,9 @@
   </header>
   <section class="hotWord-wrap">
     <div class="hotWord-conent">
-      <h3 class="hot-h3">热词搜索</h3>
+      <h3 class="hot-h3">热门推荐</h3>
       <ul class="hot-ul">
-        <li class="hot-item">摇滚红与黑</li>
-        <li class="hot-item">腿毛叔叔</li>
-        <li class="hot-item">来自远方</li>
-        <li class="hot-item">永不消逝的电波</li>
-        <li class="hot-item" >王心凌</li>
-        <li class="hot-item">音乐剧猫</li>
+        <li class="hot-item" @click="goDetail('/detail')" v-for="(item,index) in itemInput" :key="index">{{item.title}}</li>
       </ul>
     </div>
   </section>
@@ -43,12 +38,16 @@
 </template>
 <script>
 /* eslint-disable */
+// 引入商品列表信息
+import {reqSearch} from '../../api/index.js'
 export default {
   name: "",
   props: [""],
   data() {
     return {
-      inputText: "" //输入框输入的内容
+      inputText: "", //输入框输入的内容
+      newInoutText:"",
+      itemInput:[],//
     };
   },
 
@@ -58,12 +57,19 @@ export default {
 
   beforeMount() {},
 
-  mounted() {},
+  async mounted() {
+     let result = await reqSearch()
+     this.itemInput = result.detail
+     //console.log(this.itemInput)
+  },
 
   methods: {
     //输入完成 ，center键确定
-    centerText() {
-      console.log(this.inputText);
+    async centerText() {
+      // 发送请求获取数据
+      let result = await reqSearch()
+      this.inputText = result.detail;
+      console.log(this.inputText)
     },
     //点击清除图标，清空inputText内容
     deleteTExt() {
@@ -72,16 +78,24 @@ export default {
     },
     //点击取消返回msite路由
     goMsite() {
-      // console.log(this)
-      console.log(this.$router);
+      //console.log(this.$router);
       this.$router.push("/msite");
-    }
+    },
+    // 点跳转详情页 
+    goDetail() {
+      //console.log(this.$router);
+      this.$router.push("/detail");
+      console.log(this.$route)
+      console.log(this.$router)
+    },
   },
 
   watch: {}
 };
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
+// 引入混合
+@import '../../common/stylus/mixins.styl'
 .seach-wrap
   width 100%
   height 100%
@@ -165,13 +179,12 @@ export default {
         flex-wrap wrap-reverse
         .hot-item
           display block
-          width 139px
-          height 39px
+          padding 0 28px
           background-color #F5F5F5 
           margin 10px 15px
           border-radius 15px
           text-align center
           line-height 39px
           color #FF4500
-
+          white-space nowrap
 </style>

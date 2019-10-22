@@ -49,7 +49,7 @@ export default [
     path: '/seach',
     component: Search,
     meta: {
-      isShowFooter: true
+      isShowFooter: false
     }
   },
   // 商品详情页
