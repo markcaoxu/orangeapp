@@ -54,7 +54,7 @@ export default {
   bottom 0
   background-color #fff
   width 100%
-  height 50px
+  height 60px
   display flex
   padding-top 10px
   border-top 2px solid #F3F3F3
@@ -70,8 +70,8 @@ export default {
     &.on
       color #FF5E5E
     img   
-      width 20px
-      height 20px
+      width 30px
+      height 30px
       margin-bottom 3px
     span
       font-size 12px
