@@ -1,0 +1,13 @@
+{
+  "code":"success",
+  "users":[
+    {
+      "_id":"110",
+      "username":"18553876187",
+      "password":"123456",
+      "userImage":"https://static-account-cos.nubia.com/images/noavatar_middle.gif",
+      "token":"qazwsxedc852rfvtgb",
+      "class":"至尊VIP"
+    }
+  ]
+}
