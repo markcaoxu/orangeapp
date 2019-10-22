@@ -11,8 +11,10 @@ import mutations from './mutations.js'
 // 引入getters
 import getters from './getters.js'
 
-// 引入模块
+// 引入login模块
 import login from './modules/login.js'
+// 引入shop模块
+import shop from './modules/shop.js'
 
 // 声明使用
 Vue.use(Vuex)
@@ -24,6 +26,7 @@ export default new Vuex.Store({
   actions,
   getters,
   modules: {
-    login
+    login,
+    shop
   }
 })
