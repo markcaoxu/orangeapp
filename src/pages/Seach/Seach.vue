@@ -8,8 +8,14 @@
           alt
         />
       </span>
-      <input class="input-text" type="text" placeholder="请输入搜索内容">
-       <span class="cancel-icon">
+      <input
+        v-model="inputText"
+        class="input-text"
+        @keyup.13="centerText"
+        type="text"
+        placeholder="请输入搜索内容"
+      />
+      <span @click="deleteTExt" class="cancel-icon">
         <img
           class="cancel-icon-img"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGMDJDNTU4MzU2QkMxMUU5OEM3RUM1OUI4Q0VFRUUwNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGMDJDNTU4NDU2QkMxMUU5OEM3RUM1OUI4Q0VFRUUwNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkYwMkM1NTgxNTZCQzExRTk4QzdFQzU5QjhDRUVFRTA3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkYwMkM1NTgyNTZCQzExRTk4QzdFQzU5QjhDRUVFRTA3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+m2nlzQAAAexJREFUeNrsmDFrAjEUx08RR2c/glO7tzg4KehREAf7CVy7dXB26OjoXqiDCFIFnRyk3XXyG+js6GL/kWc50iTe+Z4gJYE/QnL553cvl+TF1OFwCG65pIMbLx7QA3rAMyXDNRiPx7amB6gOFaEClKP6HbSGFtCwVqt9u/xT3H3QAFiFOtB9TIsl1Abo5NqAKkI9qHmhVR9qAXR3jW8wT1PWZHiovgu8cF4aUEVuBt0JeCmPGSBzkoA9IbgoZE8EEG9aNUzrBnqB5jEs5vTsRp9u8mZHsGOoe4O6UAX6dPRVbRUsii71MXpfvIrxhmqf+7JERcHtoSw0gEIDXCPyzBQqGbweORGsW+pLBJUlgIYWSR1uYIE7jsEBLDraQgukCS50jcE56gpn2k+QjQhkkADuOEaauf8FMSFPkUwCdxzjX6dbuxjP6N+cbeFYx+AArhPCDc6sbuMYHMBFQrjQsbqtY3AAh47jy7WVmCBtx+LwYkDKhJeGplGM1foLCZ899fmTyKoxuCl/W516Wt0r/T45TogT5BRH5ijSR/cWyag/mImqMbtG9J6l8sEWtBKEW5GnWMKq9sOyEKTyKEfvJVInyZaShz5nWpUH4Lai92Itkuq7eZe8dmYC+TIh3cbF3f955AE9oAd0lx8BBgBFlKtTdbJrowAAAABJRU5ErkJggg=="
@@ -17,7 +23,7 @@
         />
       </span>
     </div>
-    <span class="cancel">取消</span>
+    <span class="cancel" @click="goMsite('/msite')">取消</span>
   </header>
 </template>
 
@@ -29,7 +35,9 @@ export default {
   name: "",
   props: [""],
   data() {
-    return {};
+    return {
+      inputText: "" //输入框输入的内容
+    };
   },
 
   components: {},
@@ -40,7 +48,23 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    //输入完成 ，center键确定
+    centerText() {
+      console.log(this.inputText);
+    },
+    //点击清除图标，清空inputText内容
+    deleteTExt() {
+      this.inputText = "";
+      console.log(this.inputText);
+    },
+    //点击取消返回msite路由
+    goMsite() {
+      // console.log(this)
+      console.log(this.$router);
+      this.$router.push("/msite");
+    }
+  },
 
   watch: {}
 };
@@ -77,14 +101,14 @@ export default {
       left 35px
       width 260px
       height 22px
-      float left 
+      float left
       line-height 22px
       outline none
-      border none 
+      border none
     .cancel-icon
       width 22px
       height 22px
-      display block 
+      display block
       position relative
       bottom 25px
       right 18px
@@ -96,18 +120,18 @@ export default {
         text-align center
         flex-direction column
         align-items center
-        margin 5px 
+        margin 5px
   .cancel
     width 40px
     height 25px
     float right
-    position  relative
+    position relative
     bottom 20px
     left 80px
-    font-size 17px  
-    color  white
+    font-size 17px
+    color white
     background-color #808080
     text-align center
-    line-height 25px 
-    border-radius 10px         
+    line-height 25px
+    border-radius 10px
 </style>
