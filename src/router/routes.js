@@ -3,6 +3,7 @@ import Msite from '../pages/Msite/Msite.vue'
 import Cinema from '../pages/Cinema/Cinema.vue'
 import Ticket from '../pages/Ticket/Ticket.vue'
 import Profile from '../pages/Profile/Profile.vue'
+import Shows from '../pages/Shows/Shows.vue'
 
 
 
@@ -39,6 +40,11 @@ export default [
     meta: {
       isShowFooter: true
     }
+  },
+  // 详情列表 Show
+  {
+    path:'/Shows',
+    component: Shows
   },
   // 重定向
   {
