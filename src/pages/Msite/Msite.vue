@@ -8,14 +8,20 @@
       </mt-swipe>
     </section>
     <Button />
-		
+		<SeachHeader />
+
   </div>
 </template>
 <script>
+// 引入button组件
 import Button from "../../components/msite/Button"
+//引入SeachHeader组件
+import SeachHeader from "../../components/msite/SeachHeader"
+
 export default {
   components: {
-    Button
+		Button,
+		SeachHeader
   },
   data () {
     return {
