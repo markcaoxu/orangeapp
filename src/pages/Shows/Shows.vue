@@ -192,8 +192,6 @@
   </div>
 </template>
 <script>
-// 引入组件
-//import ShowsList from './ShowsList/ShowsList.vue'
 // 引入BScroll
 import BScroll from "better-scroll";
 // 引入reqShows
