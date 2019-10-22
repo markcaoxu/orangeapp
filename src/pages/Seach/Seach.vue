@@ -1,5 +1,6 @@
 <template>
-  <header class="head">
+<div class="seach-wrap">
+   <header class="head">
     <div class="search-input">
       <span class="search-icon">
         <img
@@ -25,12 +26,23 @@
     </div>
     <span class="cancel" @click="goMsite('/msite')">取消</span>
   </header>
+  <section class="hotWord-wrap">
+    <div class="hotWord-conent">
+      <h3 class="hot-h3">热词搜索</h3>
+      <ul class="hot-ul">
+        <li class="hot-item">摇滚红与黑</li>
+        <li class="hot-item">腿毛叔叔</li>
+        <li class="hot-item">来自远方</li>
+        <li class="hot-item">永不消逝的电波</li>
+        <li class="hot-item" >王心凌</li>
+        <li class="hot-item">音乐剧猫</li>
+      </ul>
+    </div>
+  </section>
+</div>
 </template>
-
 <script>
-// 引入mint-ui的seach
 /* eslint-disable */
-import { Search } from "mint-ui";
 export default {
   name: "",
   props: [""],
@@ -70,68 +82,96 @@ export default {
 };
 </script>
 <style lang="stylus" rel="stylesheet/stylus" scoped>
-.head
-  position absolute
+.seach-wrap
   width 100%
-  height 50px
-  .search-input
-    position relative
-    top 8px
-    left 10px
-    width 334px
-    height 34px
-    border 1px solid #cccccc
-    border-radius 20px
-    .search-icon
-      width 22px
-      height 22px
-      display block
-      margin 5px 0 0 10px
-      .search-icon-img
+  height 100%
+  .head
+    width 100%
+    height 50px
+    .search-input
+      position relative
+      top 8px
+      left 10px
+      width 334px
+      height 34px
+      border 1px solid #cccccc
+      border-radius 20px
+      .search-icon
         width 22px
         height 22px
-        display flex
-        text-align center
-        flex-direction column
-        align-items center
-        margin 5px
-    .input-text
-      position relative
-      bottom 22px
-      left 35px
-      width 260px
-      height 22px
-      float left
-      line-height 22px
-      outline none
-      border none
-    .cancel-icon
-      width 22px
-      height 22px
-      display block
-      position relative
-      bottom 25px
-      right 18px
+        display block
+        margin 5px 0 0 10px
+        .search-icon-img
+          width 22px
+          height 22px
+          display flex
+          text-align center
+          flex-direction column
+          align-items center
+          margin 5px
+      .input-text
+        position relative
+        bottom 22px
+        left 35px
+        width 260px
+        height 22px
+        float left
+        line-height 22px
+        outline none
+        border none
+      .cancel-icon
+        width 22px
+        height 22px
+        display block
+        position relative
+        bottom 25px
+        right 18px
+        float right
+        .cancel-icon-img
+          width 22px
+          height 22px
+          display flex
+          text-align center
+          flex-direction column
+          align-items center
+          margin 5px
+    .cancel
+      width 40px
+      height 25px
       float right
-      .cancel-icon-img
-        width 22px
-        height 22px
+      position relative
+      bottom 20px
+      left 80px
+      font-size 17px
+      color white
+      background-color #808080
+      text-align center
+      line-height 25px
+      border-radius 10px
+  .hotWord-wrap
+    width 100%
+    height 80%
+    margin-top 30px
+    .hotWord-conent
+      width 382px
+      height 204px
+      margin 0 auto
+      .hot-h3
+        color #808080
+        font-size 15px
+      .hot-ul
+        width 100%
         display flex
-        text-align center
-        flex-direction column
-        align-items center
-        margin 5px
-  .cancel
-    width 40px
-    height 25px
-    float right
-    position relative
-    bottom 20px
-    left 80px
-    font-size 17px
-    color white
-    background-color #808080
-    text-align center
-    line-height 25px
-    border-radius 10px
+        flex-wrap wrap-reverse
+        .hot-item
+          display block
+          width 139px
+          height 39px
+          background-color #F5F5F5 
+          margin 10px 15px
+          border-radius 15px
+          text-align center
+          line-height 39px
+          color #FF4500
+
 </style>
