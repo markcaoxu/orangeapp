@@ -21,3 +21,9 @@ export const reqPwdLogin = ({username,password})=>ajax({
   url: BASE + `/login_pwd?username=${username}&password=${password}` // 请求地址，携带参数
 })
 // -------------------------------------请求模板---------------------
+
+// 详情列表
+export const reqShows = ()=>ajax({
+  method:'GET',
+  url: BASE + '/get_detail_info'
+})

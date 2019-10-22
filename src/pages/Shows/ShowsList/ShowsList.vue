@@ -45,11 +45,12 @@
       </li>
     </ul>
   </div>
+  
 </template>
 <script>
 export default {
   name: "ShowsList"
-}
+};
 </script>
 <style lang='stylus' rel='stylesheet/stylus'>
 .shows_list
@@ -61,7 +62,7 @@ export default {
       width 100%
       display flex
       height 180px
-      img 
+      img
         height 80%
         width 29%
         margin 18px 0
