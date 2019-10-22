@@ -92,9 +92,11 @@ export default {
         if(title===item.title){
           // 匹配成功，把这个item（匹配的商品对象）存到Vuex中
           this.$store.dispatch('saveDetail',item)
+          // 跳转到商品详情页
+          console.log(this)
+          this.$router.push('/detail')
         }
       })
-      // this.$store.dispatch("saveDetail", detail);
     }
   }
 };
