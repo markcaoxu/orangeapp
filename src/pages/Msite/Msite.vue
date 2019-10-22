@@ -1,25 +1,22 @@
 <template>
-  <div class="content">
-    <mt-swipe :auto="5000">
-      <mt-swipe-item v-for="(item,index) in arrItem" :key="index">
-				<img class="swiperImg" :src=item.img alt="">
-			</mt-swipe-item>
-    </mt-swipe>
-    <div class="search">
-      <div class="local"></div>
-      <Search v-model="value" class="mint-searchbar" placeholder="搜索热门演出"></Search>
-			<div></div>
-    </div>
-
+  <div id="app">
+    <section class="section-swiper">
+      <mt-swipe :auto="5000">
+        <mt-swipe-item v-for="(item,index) in arrItem" :key="index">
+          <img class="swiperImg" :src=item.img alt="">
+        </mt-swipe-item>
+      </mt-swipe>
+    </section>
+    <Button />
+		
   </div>
 </template>
-
 <script>
-// import  from ""
+import Button from "../../components/msite/Button"
 export default {
-	components:{
-
-	},
+  components: {
+    Button
+  },
   data () {
     return {
       arrItem: [
@@ -38,35 +35,22 @@ export default {
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
-.content
-	width 100%
-	height 100%
-	position relative
-	.mint-swipe
-		width 100%
-		height 25%
-		.mint-swipe-items-wrap
-			width 100%
-			height 100%
-			.mint-swipe-item
-				width 100%
-				height 100%
-				.swiperImg
-					width 100%
-					height 100%
-		.mint-swipe-indicators
-			margin 0 auto 
-	.search
-		width 100%
-		height 30px
-		position absolute
-		left 0
-		height 0
-		.mint-searchbar
-			background-color rgba(255,255,255,0.3)
-		.local
-			background-color rgba(255,255,255,0.1)
-			font-size 14px
-			width 60px
-			height 30px
+#app
+  height 100%
+  position relative
+.section-swiper
+  width 100%
+  height 30%
+  .mint-swipe
+    height 100%
+    .mint-swipe-items-wrap
+      background-color red
+      .mint-swipe-item
+        width 100%
+        background-color blue
+        .swiperImg
+          width 100%
+          height 100%
+    .mint-swipe-indicators
+      color white
 </style>
