@@ -52,3 +52,9 @@ export const reqShows = ()=>ajax({
   method:'GET',
   url: BASE+'/shows'
 })
+
+// 请求票劵信息
+export const reqTicketInfo = ()=>ajax({
+  method:'GET',
+  url:BASE+'/get_ticket_info'
+})

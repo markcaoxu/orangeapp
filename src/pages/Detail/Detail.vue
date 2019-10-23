@@ -72,7 +72,11 @@
           <li>
             <span class="span01">支持</span>
             <span>：</span>
-            <span class="span04" v-for="(support,index) in detail.support" :key="index*100+100">{{support}}</span>
+            <span
+              class="span04"
+              v-for="(support,index) in detail.support"
+              :key="index*100+100"
+            >{{support}}</span>
           </li>
         </ul>
       </div>
@@ -81,19 +85,13 @@
         <p class="desc-title">演出介绍</p>
         <p class="first-line">{{detail.performDescribeTitle}}</p>
 
-        <p
-          class="other-line"
-          v-for="(perContent01,index) in detail.performDescribeContent01"
-          :key="index*1000+1000"
-        >{{perContent01}}</p>
+        <p class="other-line">{{detail.performDescribeContent01}}</p>
+        <p class="other-line">{{detail.performDescribeContent02}}</p>
         <p>
           <img class="img01" :src="detail.performDescribeImg01" alt />
         </p>
-        <p
-          class="other-line"
-          v-for="(perContent02,index) in detail.performDescribeContent02"
-          :key="index*10000+10000"
-        >{{perContent02}}</p>
+        <p class="other-line">{{detail.performDescribeContent03}}</p>
+        <p class="other-line">{{detail.performDescribeContent04}}</p>
         <p>
           <img class="img01" :src="detail.performDescribeImg02" alt />
         </p>
@@ -123,27 +121,83 @@
         <span class="iconfont icon-kefu-ermai"></span>
         <span>客服</span>
       </div>
-      <div class="footer-right">选座购买</div>
+      <div class="footer-right" v-show="!isShowOptions" @click="showOptions">选座购买</div>
+      <div class="footer-right" v-show="isShowOptions" @click="goToTicket">确认购买</div>
     </div>
+
+    <!-- 遮罩层 -->
+    <div class="cover" v-show="isShowOptions" @click="showOptions"></div>
+    <!-- 独立界面，选座 -->
+    <transition name="fade">
+      <!-- <div class="options-list" v-show="isShowOptions"></div> -->
+      <div class="options-list" v-show="isShowOptions">
+        <p class="date_title">选择日期</p>
+        <ul class="choose_date">
+          <li
+            class="date_item"
+            :class="{on:thisDateIndex===index}"
+            v-for="(date,index) in detail.dateOptions"
+            :key="index*100000+1"
+            @click="chooseDateItem(index)"
+          >{{date}}</li>
+        </ul>
+
+        <p class="time_title">选择场次</p>
+        <ul class="choose_time">
+          <li
+            class="time_item"
+            :class="{on:thisTimeIndex===index}"
+            v-for="(time,index) in detail.timeOption"
+            :key="index*100000+1"
+            @click="chooseTimeItem(index)"
+          >{{time}}</li>
+        </ul>
+
+        <p class="price_title">选择价格</p>
+        <ul class="choose_price">
+          <li
+            class="price_item"
+            :class="{on:thisPriceIndex===index}"
+            v-for="(price,index) in detail.priceOption"
+            :key="index*10000000+1"
+            @click="choosePriceItem(index)"
+          >{{price}}</li>
+        </ul>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
 // 引入better-scroll
 import BScroll from "better-scroll";
+// 引入utils工具
+import GetOrSetLocalStorageChooses from "../../utils/utils.js";
+// 引入MessageBxo插件
+import { MessageBox, Toast } from "mint-ui";
 
 export default {
   data() {
     return {
+      isShowOptions: false, // 选票界面是否显示   默认不显示
+      dateId: -1, // 日期标识
+      timeId: -1, // 时间标识
+      priceId: -1, // 价格标识
+      thisDateIndex: -1, // 当前日期索引
+      thisTimeIndex: -1, // 当前时间索引
+      thisPriceIndex: -1 // 当前价格索引
     };
   },
   async mounted() {
     // 页面滚动事件
     this.$nextTick(() => {
+      // 创建一个滑动包含块
       this.scroll = new BScroll(this.$refs.wrapper, {
         scrollY: true,
+        // 点击事件会禁用
         click: true,
         startY: 0,
+        // 配置四个方向是否允许滑动
         bounce: {
           top: false,
           bottom: true,
@@ -152,22 +206,92 @@ export default {
         }
       });
     });
-    // 如果已经请求了数据，刷新将再次请求----vuex中shop模块
-    // this.$store.dispatch("autoGetDetail");
-    // 发送请求匹配商品详情对象
-    // console.log(this.$store.dispatch('autoGetDetail'));
-    this.$store.dispatch('autoGetDetail')
+    // 如果已经请求了数据，刷新将再次请求----vuex中shop模块----发送请求匹配商品详情对象
+    // console.log(this.$store.dispatch('autoGetDetail'));   // 返回的是一个promise对象
+    this.$store.dispatch("autoGetDetail");
   },
+  // 计算属性
   computed: {
-    // detail:this.$store.state.shop.detail||{}
-    detail:{
-      get(){
-        return this.$store.state.shop.detail
+    // 监视商品信息的变化
+    detail: {
+      get() {
+        return this.$store.state.shop.detail;
       },
-      set(val){
-        console.log('hahah sdnashdo');
-        
+      set(val) {
+        console.log("hahah sdnashdo");
       }
+    }
+  },
+  // 方法
+  methods: {
+    // 显示选票
+    showOptions() {
+      this.isShowOptions = !this.isShowOptions;
+    },
+    // 选择的日期时间
+    chooseDateItem(index) {
+      if (this.thisDateIndex === index) {
+        // 相等无操作
+      } else {
+        // 切换日期，清空二级选项
+        this.thisTimeIndex = -1;
+        this.thisPriceIndex = -1;
+        // 更新日期标志
+        this.thisDateIndex = index;
+      }
+    },
+    // 选择时间
+    chooseTimeItem(index) {
+      if (this.thisTimeIndex === index) {
+        // 相等无操作
+      } else {
+        // 切换时间，清空三级选项
+        this.thisPriceIndex = -1;
+        // 更新时间标志
+        this.thisTimeIndex = index;
+      }
+    },
+    // 选择价格
+    choosePriceItem(index) {
+      if (this.thisPriceIndex === index) {
+        // 相等无操作
+      } else {
+        // 没有下级，直接更新价格标识
+        this.thisPriceIndex = index;
+      }
+    },
+    // 收揽数据，存储当前影剧到vuex，跳转路由到Ticket组件
+    goToTicket() {
+      const chooseResultObj = {
+        date: this.detail.dateOptions[this.thisDateIndex],
+        time: this.detail.timeOption[this.thisTimeIndex],
+        price: this.detail.priceOption[this.thisPriceIndex]
+      };
+      // console.log(chooseResultObj);
+      // 存储到localStorage   使用utils工具中的封装方法
+      GetOrSetLocalStorageChooses.setChooses(chooseResultObj);
+      // 保存当前对象标识
+      this.$store.dispatch("saveDetail", this.detail);
+
+      // 提示
+      Toast({
+        message: "正在跳转自动支付...",
+        position: "middle"
+      });
+      // 延时跳转
+      window.timeId = setTimeout(() => {
+        delete window.timeId;
+        // 提示
+        Toast({
+          message: "支付成功！",
+          position: "middle"
+        });
+        window.timeId = setTimeout(() => {
+          delete window.timeId;
+          // 跳转到Ticket组件
+          this.$router.push("/ticket");
+        }, 3000);
+      }, 2000);
     }
   }
 };
@@ -229,7 +353,8 @@ export default {
           background-position 0 -40px
           display flex
           justify-content space-between
-          background-color #02a794
+          // background-color #02a794
+          background-color #604F3A
           .left-img
             position relative
             width 35%
@@ -454,7 +579,8 @@ export default {
     left 0
     background-color #ffffff
     padding 8px
-    border-top 1px solid #F1F1F1
+    border-top 2px solid #F1F1F1
+    z-index 888
     .footer-left
       float left
       display flex
@@ -478,4 +604,53 @@ export default {
       color #ffffff
       font-weight 700
       border-radius 19px
+.cover
+  width 100%
+  height 80%
+  background-color rgba(0, 0, 0, 0.5)
+  position fixed
+  top 0
+  left 0
+// 选项列表
+.options-list
+  width 100%
+  height 470px
+  background-color #ffffff
+  position fixed
+  left 0
+  bottom 55px
+  opacity 1
+  border-radius 8px 8px 0 0
+  &.fade-enter-active, &.fade-leave-active
+    transition all 0.5s
+  &.fade-enter, &.fade-leave-to
+    height 0
+  // 选项
+  p
+    font-size 18px
+    padding 30px 0 15px 15px
+    font-weight 600
+  ul
+    display flex
+    flex-wrap wrap
+    padding 0 15px
+    width 100%
+    li
+      margin-top 15px
+      height 45px
+      background-color #F5F5F5
+      line-height 45px
+      text-align center
+      padding 0 20px
+      margin-right 10px
+      border-radius 3px
+      &.on
+        background-color #FEF2EF
+        color #FF8E73
+        font-weight 500
+    .time_item
+      padding 0 35px
+    .price_item
+      padding 0 0
+      width 110px
 </style>
