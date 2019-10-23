@@ -1,7 +1,5 @@
 <template>
-
   <div id="app">
-
     <!-- 路由匹配到的组件将显示在这里  <router-view></router-view> -->
     <router-view></router-view>
 
@@ -9,9 +7,7 @@
       <!-- 公共组件  携带判断 -->
       <FooterGuide v-show="$route.meta.isShowFooter" />
     </div>
-
   </div>
-
 </template>
 
 <script>
@@ -23,12 +19,17 @@ export default {
   components: {
     // 注册组件
     FooterGuide
-  }
+  },
+  // mounted() {
+  //   // 如果已经请求了数据，刷新将再次请求----vuex中shop模块
+  //   this.$store.dispatch('autoGetDetail')
+  // }
 };
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
 #app
-	height 100%
-	width 100%
+  height 100%
+  width 100%
+  overflow hidden
 </style>

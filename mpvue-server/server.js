@@ -69,6 +69,26 @@ koaRouter.get('/cinemas_info',(ctx)=>{
 //   }
 // })
 
+// 请求商品详细信息的接口
+koaRouter.get('/autoGetDetail',(ctx)=>{
+  const details = datas.detail
+  let detail = {}
+  console.log(details);
+  
+  details.forEach((item)=>{
+
+    if(item.name===ctx.query.name){
+      // 接受名字匹配，返回这个商品详情
+      detail=item
+      // console.log(item)
+    }
+  })
+  
+  ctx.body={
+    detail
+  }
+})
+
 // 声明使用所有的路由及路由的相关的所有的方法
 koa
   .use(koaRouter.routes())
