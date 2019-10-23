@@ -8,19 +8,16 @@ import router from './router/index.js'
 import store from './store/index.js'
 
 
-
-
-
 // 引入mint-ui
 import MintUI from 'mint-ui'
 // 本地依赖包里mint-ui样式    也可以配置babel
 import 'mint-ui/lib/style.css'
 // 引入reset.css文件
 import "../public/css/reset.css"
-// 引入BScroll组件
-import BScroll from 'better-scroll'
-// 声明使用
-Vue.use(BScroll)
+// // 引入BScroll组件
+// import BScroll from 'better-scroll'
+// // 声明使用
+// Vue.use(BScroll)
 // 声明使用
 Vue.use(MintUI)
 // 引入mint-ui中的组件
