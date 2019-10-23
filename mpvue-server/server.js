@@ -40,6 +40,7 @@ koaRouter.get('/get_detail_info',(ctx)=>{
   }
 })
 
+
 // 轮播图信息的接口
 koaRouter.get('/get_swiper',(ctx)=>{
   const swiper = datas.swiperDetail

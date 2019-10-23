@@ -2,44 +2,46 @@
   "Cinemas":[
     {
       "cinemaName":"石家庄大剧院",
-      "cinemaImg":"https://image.juooo.com//group1/M00/01/D2/rAoKmVwknq2AQjJ3AABZC2s-o9o803.jpg",
-      "performNum":"179",
-      "performs":[{
+      "cinemaImg":"https://image.juooo.com//group1/M00/01/D3/rAoKmVwlyY6AHU-XAABZsyVCtbY679.jpg",
+      "performNum":"39",
+      "performs":[
+        {
+          "title":"陈佩斯、杨立新主演喜剧《戏台》-石家庄",
+          "time":"10月31日",
+          "imgUrl":"https://image.juooo.com//group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg"
+        },
+        {
         "title":"曹禺经典巨作-话剧《雷雨》-石家庄站",
-        "time":"10月22日",
-        "imgUrl":"https://image.juooo.com//group1/M00/03/3B/rAoKNVzYzquAa9PLAAD-QbZWK0w450.gif"
-      },{
-        "title":"陈佩斯、杨立新主演喜剧《戏台》-石家庄",
-        "time":"10月31日",
-        "imgUrl":"https://image.juooo.com//group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg"
+        "time":"10月23日",
+        "imgUrl":"https://image.juooo.com//group1/M00/03/3B/rAoKNVzYzrmAI9LJAAD-QbZWK0w692.gif"
       }]
     },
     {
-      "cinemaName":"石家庄大剧院",
+      "cinemaName":"南山文体中心",
       "cinemaImg":"https://image.juooo.com//group1/M00/01/D2/rAoKmVwknq2AQjJ3AABZC2s-o9o803.jpg",
       "performNum":"179",
       "performs":[{
-        "title":"曹禺经典巨作-话剧《雷雨》-石家庄站",
-        "time":"10月22日",
-        "imgUrl":"https://image.juooo.com//group1/M00/03/3B/rAoKNVzYzquAa9PLAAD-QbZWK0w450.gif"
+        "title":"【万有音乐系】意大利米兰交响乐团2020新年音乐会-石家庄站",
+        "time":"12月24日",
+        "imgUrl":"https://image.juooo.com/group1/M00/03/11/rAoKmV1-87eAATVZAACiNRBcAok761.jpg"
       },{
-        "title":"陈佩斯、杨立新主演喜剧《戏台》-石家庄",
-        "time":"10月31日",
-        "imgUrl":"https://image.juooo.com//group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg"
+        "title":"话剧《蒋公的面子》--石家庄",
+        "time":"11月16日",
+        "imgUrl":"https://image.juooo.com/group1/M00/01/E8/rAoKmVxS0JKALcHWAABmP_sHNe4613.jpg"
       }]
     },
     {
-      "cinemaName":"石家庄大剧院",
-      "cinemaImg":"https://image.juooo.com//group1/M00/01/D2/rAoKmVwknq2AQjJ3AABZC2s-o9o803.jpg",
+      "cinemaName":"柳钢文化中心",
+      "cinemaImg":"https://image.juooo.com//group1/M00/01/DD/rAoKmVw_AXKADtxyAABfZnY7HqQ587.jpg",
       "performNum":"179",
       "performs":[{
-        "title":"曹禺经典巨作-话剧《雷雨》-石家庄站",
-        "time":"10月22日",
-        "imgUrl":"https://image.juooo.com//group1/M00/03/3B/rAoKNVzYzquAa9PLAAD-QbZWK0w450.gif"
+        "title":"上海越剧院《红楼梦》-石家庄站",
+        "time":"12月08日",
+        "imgUrl":"https://image.juooo.com/group1/M00/03/84/rAoKNV0wNxyAcuwSAABF4oPR-nM733.jpg"
       },{
-        "title":"陈佩斯、杨立新主演喜剧《戏台》-石家庄",
-        "time":"10月31日",
-        "imgUrl":"https://image.juooo.com//group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg"
+        "title":"【万有音乐系】“龙猫与他的小伙伴”宫崎骏2019动漫视听音乐会-柳州站",
+        "time":"12月21日",
+        "imgUrl":"https://image.juooo.com/group1/M00/01/B3/rAoKNVqPgs2AcHacAADU3dzhHHA881.jpg"
       }]
     }
   ]
