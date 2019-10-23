@@ -17,6 +17,7 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 // 引入reset.css文件
 import "../public/css/reset.css"
+
 // 声明使用
 Vue.use(MintUI)
 // 引入mint-ui中的组件

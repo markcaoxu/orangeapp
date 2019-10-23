@@ -40,3 +40,9 @@ export const reqDetailInfo = ()=>ajax({
   method:'GET',
   url: BASE+'/get_detail_info'
 })
+
+// 请求商品列表
+export const reqShows = ()=>ajax({
+  method:'GET',
+  url: BASE+'/shows'
+})
