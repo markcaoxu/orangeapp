@@ -26,13 +26,10 @@ import {
 	Search,
 	Swipe,
 	SwipeItem,
-<<<<<<< HEAD
-	Field
-=======
 	TabContainer, 
 	TabContainerItem,
-	Cell
->>>>>>> 17e7be2250638dd67c2d1dd0aac692d5a9edc153
+	Cell,
+	Field
 } from 'mint-ui'
 
 
@@ -47,14 +44,11 @@ Vue.component(Search.name, Search);
 // 声明使用
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
-<<<<<<< HEAD
 Vue.component(Field.name, Field)
-=======
 // 声明使用
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
 Vue.component(Cell.name, Cell);
->>>>>>> 17e7be2250638dd67c2d1dd0aac692d5a9edc153
 
 // 表单验证 vee-validate的引入
 
