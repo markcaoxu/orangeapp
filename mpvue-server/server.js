@@ -81,7 +81,7 @@ koaRouter.get('/shows',(ctx)=>{
 koaRouter.get('/autoGetDetail',(ctx)=>{
   const details = datas.detail
   let detail = {}
-  console.log(details);
+  // console.log(details);
   
   details.forEach((item)=>{
 
@@ -104,6 +104,6 @@ koa
   
 // 监听端口,启动服务器
 koa.listen('5000', () => {
-  // console.log('服务器启动了')
-  // console.log('服务器的地址为:http://localhost:5000')
+  console.log('服务器启动了')
+  console.log('服务器的地址为:http://localhost:5000')
 })
