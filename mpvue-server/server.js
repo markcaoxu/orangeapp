@@ -38,6 +38,7 @@ koaRouter.get('/get_detail_info',(ctx)=>{
   }
 })
 
+
 // 轮播图信息的接口
 koaRouter.get('/get_swiper',(ctx)=>{
   const swiper = datas.swiperDetail
@@ -47,7 +48,7 @@ koaRouter.get('/get_swiper',(ctx)=>{
 })
 
 // 请求首页信息的接口
-koaRouter.get('get_msite_detail',(ctx)=>{
+koaRouter.get('/get_msite_detail',(ctx)=>{
   const msiteDetail = msite.Home
   ctx.body={
     msiteDetail

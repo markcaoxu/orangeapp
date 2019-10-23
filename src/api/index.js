@@ -16,8 +16,14 @@ const BASE = '/api'
 // -------------------------------------请求模板---------------------
 // 请求用户名和密码登录
 // 暴露请求
-export const reqPwdLogin = ({username,password})=>ajax({
-  method:'POST', // 请求类型
-  url: BASE + `/login_pwd?username=${username}&password=${password}` // 请求地址，携带参数
+export const reqPwdLogin = ({ username, password }) => ajax({
+	method: 'POST', // 请求类型
+	url: BASE + `/login_pwd?username=${username}&password=${password}` // 请求地址，携带参数
 })
 // -------------------------------------请求模板---------------------
+
+// 请求 msite首页  信息
+export const reqMessage = () => ajax({
+	method: 'GET',
+	url: BASE + '/get_msite_detail'
+})

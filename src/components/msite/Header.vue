@@ -6,21 +6,21 @@
       <div class="Location" @click="goTo('/location')">
         <span class="Location-text">
           <img src="../../pages/Msite/img/nav_icon_search.f194288.png" class="Location-img">
-          全国
+          &nbsp;&nbsp;全国
         </span>
       </div>
 
       <!-- 搜索框部分 -->
       <div class="search-input" @click="goTo('/seach')">
-        <p class="search-text">搜索热门信息</p>
+        <p class="search-text">
+					<img src="../../pages/Msite/img/nav_icon_search.f194288.png" class="search-img">
+					搜索热门信息
+					</p>
       </div>
 
       <!-- 分享部分 -->
       <div class="share" @click="goTo('/share')">
-        <p class="share-text">
-          <span class="share-up">分享</span>
-          <span class="share-down">赚佣金</span>
-        </p>
+        <img  class="share-img" src="https://image.juooo.com/group1/M00/02/65/rAoKmVyvD7iAHJX4AAADmpmoUeI150.png" alt="">
       </div>
 
     </header>
@@ -31,7 +31,7 @@ export default {
   methods: {
     goTo (path) {
       if (this.$router.path !== path) {
-        this.$router.path = path
+        this.$router.push(path)
       }
     }
   }
@@ -44,26 +44,33 @@ export default {
   display flex
   justify-content space-around
   align-items center
-  background-color black
-  opacity 0.7
+  opacity 0.4
   .Location
     height 100%
     width 21%
     box-sizing border-box
     padding 1%
     text-align center
-		color white
+		color white	
 		.Location-text
 			border .5px solid white
-			width 100%
-			height 100%
+			width 15%
+			height 75%
 			border-radius 20px
+			line-height 145%
+			position absolute
+			top 20%
+			left 3%
+			background-color black
 			.Location-img
 				width 20px
 				height 20px
 				padding 5px
+				position absolute
+				top -10%
+				left -10%
   .search-input
-    height 80%
+    height 100%
     width 60%
     box-sizing border-box
     padding 1%
@@ -74,6 +81,15 @@ export default {
 			width 100%
 			height 100%
 			border-radius 20px
+			line-height 160%
+			position relative
+			background-color black
+			.search-img
+				width 12%
+				height 100%
+				position absolute
+				top 1%
+				left 1%
   .share
     height 80%
     width 20%
@@ -82,14 +98,7 @@ export default {
     text-align center
 		color white
 		border .5px solid white
-		.share-text
-			border 1px solid white
-			border-radius 20px
-			width 100%
+		.share-img
+			width 50%
 			height 100%
-			.share-up
-				font-size 13px
-				display block
-			.share-down
-				font-size 12px
 </style>
