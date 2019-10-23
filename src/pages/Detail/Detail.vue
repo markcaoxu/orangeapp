@@ -163,8 +163,9 @@
 <script>
 // 引入better-scroll
 import Bscroll from "better-scroll";
+
 export default {
-  mounted() {
+  async mounted() {
     this.$nextTick(() => {
       this.scroll = new Bscroll(this.$refs.wrapper, {
         scrollY: true,

@@ -1,5 +1,6 @@
 {
   "detail": [{
+      "name": "话剧《雷雨》",
       "title": "曹禺经典巨作-话剧《雷雨》-石家庄站",
       "coverUrl": "https://image.juooo.com/group1/M00/02/91/rAoKmVzYzquAEEiPAAD-QbZWK0w059.gif",
       "priceRange": "50-500",
@@ -42,6 +43,7 @@
         "180", "280", "480", "680", "880", "1080"
       ]
     }, {
+      "name":"喜剧《戏台》",
       "title": "陈佩斯、杨立新主演喜剧《戏台》-石家庄",
       "coverUrl": "https://image.juooo.com/group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg",
       "priceRange": "180-1080",
@@ -86,6 +88,7 @@
       ]
     },
     {
+      "name":"米兰交响乐团",
       "title": "【万有音乐系】意大利米兰交响乐团2020新年音乐会-石家庄站",
       "coverUrl": "https://image.juooo.com/group1/M00/03/11/rAoKmV1-87eAATVZAACiNRBcAok761.jpg",
       "priceRange": "80-750",
@@ -122,6 +125,7 @@
         "180", "280", "480", "680", "880", "1080"
       ]
     }, {
+      "name":"《蒋公的面子》",
       "title": "话剧《蒋公的面子》--石家庄",
       "coverUrl": "https://image.juooo.com/group1/M00/01/E8/rAoKmVxS0JKALcHWAABmP_sHNe4613.jpg",
       "priceRange": "50-600",
@@ -159,7 +163,8 @@
       "priceOption": [
         "180", "280", "480", "680", "880", "1080"
       ]
-    },{
+    }, {
+      "name":"《红楼梦》",
       "title": "上海越剧院《红楼梦》-石家庄站",
       "coverUrl": "https://image.juooo.com/group1/M00/03/84/rAoKNV0wNxyAcuwSAABF4oPR-nM733.jpg",
       "priceRange": "50-300",
@@ -200,6 +205,7 @@
     }
   ],
   "swiperDetail": [{
+      "name": "郑伊健演唱會",
       "title": "Along With Ekin Live Concert 2019 郑伊健演唱會新加坡站",
       "coverUrl": "https://image.juooo.com/group1/M00/03/2C/rAoKmV2oFqSAcQ3kAACkgL4n4dc834.jpg",
       "priceRange": "580-1180",
@@ -245,6 +251,7 @@
       ]
     },
     {
+      "name":"音乐剧《芝加哥》",
       "title": "百老汇原版音乐剧《芝加哥》Chicago -南京站",
       "coverUrl": "https://image.juooo.com/group1/M00/03/BA/rAoKNV1_IcWAAKMCAACBad-K3Io772.jpg",
       "priceRange": "180-980",

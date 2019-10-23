@@ -13,20 +13,20 @@ let datas = require('./datas/datas.json')
 let login = require('./datas/login.json')
 // 引入首页数据
 let msite = require('./datas/msite.json')
+// 引入剧场数据
+let cinemaInfo = require('./datas/cinema.json')
 
 
 // 登录接口
-koaRouter.post('/login_pwd',(ctx)=>{
+koaRouter.get('/login_pwd',(ctx)=>{
   // 匹配账号密码
   login.users.forEach((item)=>{
-    if(item.username===ctx.query.username&&item.password===ctx.query.password){
       ctx.body={
         message:'登录成功',
         code:"0",
         // 数据
         login:item
       }
-    }
   })
 })
 
@@ -47,12 +47,27 @@ koaRouter.get('/get_swiper',(ctx)=>{
 })
 
 // 请求首页信息的接口
-koaRouter.get('get_msite_detail',(ctx)=>{
+koaRouter.get('/get_msite_detail',(ctx)=>{
   const msiteDetail = msite.Home
   ctx.body={
     msiteDetail
   }
 })
+
+// 请求剧院页面的剧场信息的接口
+koaRouter.get('/cinemas_info',(ctx)=>{
+  const cinemasInfo = cinemaInfo
+  ctx.body={
+    cinemasInfo
+  }
+})
+// 请求详情列表的接口
+// koaRouter.get('get_msite_detail',(ctx)=>{
+//   const msiteDetail = msite.Home
+//   ctx.body={
+//     msiteDetail
+//   }
+// })
 
 // 声明使用所有的路由及路由的相关的所有的方法
 koa
