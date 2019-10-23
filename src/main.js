@@ -24,7 +24,8 @@ import {
 	// 引入的组件
 	Search,
 	Swipe,
-	SwipeItem
+	SwipeItem,
+	Field
 } from 'mint-ui'
 
 
@@ -39,7 +40,7 @@ Vue.component(Search.name, Search);
 // 声明使用
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
-
+Vue.component(Field.name, Field)
 
 // 表单验证 vee-validate的引入
 
