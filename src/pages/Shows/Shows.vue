@@ -6,38 +6,7 @@
       <span class="iconfont icon-gengduo"></span>
     </div>
     <div class="shows_center">
-      <!-- <div class="center_left" ref="wrapper">
-      <ul class="content" ref="wrapperUl">
-        <li class="contentLi">
-          <a href="javascript:;">全部</a>
-        </li>
-        <li>
-          <a href="javascript:;">演唱会</a>
-        </li>
-        <li>
-          <a href="javascript:;">音乐会</a>
-        </li>
-        <li>
-          <a href="javascript:;">话剧歌剧</a>
-        </li>
-        <li>
-          <a href="javascript:;">儿童亲子</a>
-        </li>
-        <li>
-          <a href="javascript:;">音乐剧</a>
-        </li>
-        <li>
-          <a href="javascript:;">戏曲综艺</a>
-        </li>
-        <li>
-          <a href="javascript:;">展览</a>
-        </li>
-        <li>
-          <a href="javascript:;">芭蕾舞蹈</a>
-        </li>
-      </ul>
-      </div>-->
-      <div class="center_left" ref="wrapper">
+      <div class="center_left" ref="center_left">
         <div class="nav">
           <mt-button size="small" @click.native.prevent="active = 'tab-container1'">全部</mt-button>
           <mt-button size="small" @click.native.prevent="active = 'tab-container2'">演唱会</mt-button>
@@ -55,184 +24,189 @@
         <span>全国</span>
         <span class="iconfont icon-dingwei"></span>
       </div>
-    <div class="shows_footer">
-      <!-- <ShowsList/> -->
-      <div class="page-tab-container">
-        <mt-tab-container class="page-tabbar-tab-container" v-model="active" swipeable>
-          <mt-tab-container-item id="tab-container1">
-            <!-- cell组件 -->
-            <mt-cell v-for="(show,index) in shows" :key="index">
-              <img :src="show.coverUrl" alt />
-              <div class="list_right">
-                <span class="right_time">{{show.performanceTime}}</span>
-                <span class="right_day">{{show.performanceDate}}</span>
-                <h3>{{show.title}}</h3>
-                <p>{{show.performancePlace}}</p>
-                <strong class="money">￥{{show.priceMin}}</strong>
-                <span class="money_right">起</span>
-              </div>
-            </mt-cell>
-          </mt-tab-container-item>
-          <mt-tab-container-item id="tab-container2">
-            <!-- cell组件 -->
-            <mt-cell v-for="(show,index) in shows" :key="index">
-              <img :src="show.coverUrl" alt />
-              <div class="list_right">
-                <span>{{show.performanceTime}}</span>
-                <span>{{show.performanceDate}}</span>
-                <h3>{{show.title}}</h3>
-                <p>{{show.performancePlace}}</p>
-                <strong class="howMoney">￥{{show.priceMin}}</strong>
-                <span>起</span>
-              </div>
-            </mt-cell>
-          </mt-tab-container-item>
-          <mt-tab-container-item id="tab-container3">
-            <!-- cell组件 -->
-            <mt-cell v-for="(show,index) in shows" :key="index">
-              <img :src="show.coverUrl" alt />
-              <div class="list_right">
-                <span>{{show.performanceTime}}</span>
-                <span>{{show.performanceDate}}</span>
-                <h3>{{show.title}}</h3>
-                <p>{{show.performancePlace}}</p>
-                <strong class="howMoney">￥{{show.priceMin}}</strong>
-                <span>起</span>
-              </div>
-            </mt-cell>
-          </mt-tab-container-item>
-          <mt-tab-container-item id="tab-container4">
-            <!-- cell组件 -->
-            <mt-cell v-for="(show,index) in shows" :key="index">
-              <img :src="show.coverUrl" alt />
-              <div class="list_right">
-                <span>{{show.performanceTime}}</span>
-                <span>{{show.performanceDate}}</span>
-                <h3>{{show.title}}</h3>
-                <p>{{show.performancePlace}}</p>
-                <strong class="howMoney">￥{{show.priceMin}}</strong>
-                <span>起</span>
-              </div>
-            </mt-cell>
-          </mt-tab-container-item>
-          <mt-tab-container-item id="tab-container5">
-            <!-- cell组件 -->
-            <mt-cell v-for="(show,index) in shows" :key="index">
-              <img :src="show.coverUrl" alt />
-              <div class="list_right">
-                <span>{{show.performanceTime}}</span>
-                <span>{{show.performanceDate}}</span>
-                <h3>{{show.title}}</h3>
-                <p>{{show.performancePlace}}</p>
-                <strong class="howMoney">￥{{show.priceMin}}</strong>
-                <span>起</span>
-              </div>
-            </mt-cell>
-          </mt-tab-container-item>
-          <mt-tab-container-item id="tab-container6">
-            <!-- cell组件 -->
-            <mt-cell v-for="(show,index) in shows" :key="index">
-              <img :src="show.coverUrl" alt />
-              <div class="list_right">
-                <span>{{show.performanceTime}}</span>
-                <span>{{show.performanceDate}}</span>
-                <h3>{{show.title}}</h3>
-                <p>{{show.performancePlace}}</p>
-                <strong class="howMoney">￥{{show.priceMin}}</strong>
-                <span>起</span>
-              </div>
-            </mt-cell>
-          </mt-tab-container-item>
-          <mt-tab-container-item id="tab-container7">
-            <!-- cell组件 -->
-            <mt-cell v-for="(show,index) in shows" :key="index">
-              <img :src="show.coverUrl" alt />
-              <div class="list_right">
-                <span>{{show.performanceTime}}</span>
-                <span>{{show.performanceDate}}</span>
-                <h3>{{show.title}}</h3>
-                <p>{{show.performancePlace}}</p>
-                <strong class="howMoney">￥{{show.priceMin}}</strong>
-                <span>起</span>
-              </div>
-            </mt-cell>
-          </mt-tab-container-item>
-          <mt-tab-container-item id="tab-container8">
-            <!-- cell组件 -->
-            <mt-cell v-for="(show,index) in shows" :key="index">
-              <img :src="show.coverUrl" alt />
-              <div class="list_right">
-                <span>{{show.performanceTime}}</span>
-                <span>{{show.performanceDate}}</span>
-                <h3>{{show.title}}</h3>
-                <p>{{show.performancePlace}}</p>
-                <strong class="howMoney">￥{{show.priceMin}}</strong>
-                <span>起</span>
-              </div>
-            </mt-cell>
-          </mt-tab-container-item>
-          <mt-tab-container-item id="tab-container9">
-            <!-- cell组件 -->
-            <mt-cell v-for="(show,index) in shows" :key="index">
-              <img :src="show.coverUrl" alt />
-              <div class="list_right">
-                <span>{{show.performanceTime}}</span>
-                <span>{{show.performanceDate}}</span>
-                <h3>{{show.title}}</h3>
-                <p>{{show.performancePlace}}</p>
-                <strong class="howMoney">￥{{show.priceMin}}</strong>
-                <span>起</span>
-              </div>
-            </mt-cell>
-          </mt-tab-container-item>
-        </mt-tab-container>
+      <div class="shows_footer">
+        <!-- <ShowsList/> -->
+        <div class="page-tab-container">
+          <mt-tab-container class="page-tabbar-tab-container" v-model="active">
+            <mt-tab-container-item id="tab-container1">
+              <!-- cell组件 -->
+              <mt-cell v-for="(show,index) in shows" :key="index">
+                <img :src="show.coverUrl" alt />
+                <div class="list_right">
+                  <span class="right_time">{{show.performanceTime}}</span>
+                  <span class="right_day">{{show.performanceDate}}</span>
+                  <h3>{{show.title}}</h3>
+                  <p>{{show.performancePlace}}</p>
+                  <strong class="money">￥{{show.priceMin}}</strong>
+                  <span class="money_right">起</span>
+                </div>
+              </mt-cell>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="tab-container2">
+              <!-- cell组件 -->
+              <mt-cell v-for="(show,index) in shows" :key="index">
+                <img :src="show.coverUrl" alt />
+                <div class="list_right">
+                  <span>{{show.performanceTime}}</span>
+                  <span>{{show.performanceDate}}</span>
+                  <h3>{{show.title}}</h3>
+                  <p>{{show.performancePlace}}</p>
+                  <strong class="howMoney">￥{{show.priceMin}}</strong>
+                  <span>起</span>
+                </div>
+              </mt-cell>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="tab-container3">
+              <!-- cell组件 -->
+              <mt-cell v-for="(show,index) in shows" :key="index">
+                <img :src="show.coverUrl" alt />
+                <div class="list_right">
+                  <span>{{show.performanceTime}}</span>
+                  <span>{{show.performanceDate}}</span>
+                  <h3>{{show.title}}</h3>
+                  <p>{{show.performancePlace}}</p>
+                  <strong class="howMoney">￥{{show.priceMin}}</strong>
+                  <span>起</span>
+                </div>
+              </mt-cell>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="tab-container4">
+              <!-- cell组件 -->
+              <mt-cell v-for="(show,index) in shows" :key="index">
+                <img :src="show.coverUrl" alt />
+                <div class="list_right">
+                  <span>{{show.performanceTime}}</span>
+                  <span>{{show.performanceDate}}</span>
+                  <h3>{{show.title}}</h3>
+                  <p>{{show.performancePlace}}</p>
+                  <strong class="howMoney">￥{{show.priceMin}}</strong>
+                  <span>起</span>
+                </div>
+              </mt-cell>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="tab-container5">
+              <!-- cell组件 -->
+              <mt-cell v-for="(show,index) in shows" :key="index">
+                <img :src="show.coverUrl" alt />
+                <div class="list_right">
+                  <span>{{show.performanceTime}}</span>
+                  <span>{{show.performanceDate}}</span>
+                  <h3>{{show.title}}</h3>
+                  <p>{{show.performancePlace}}</p>
+                  <strong class="howMoney">￥{{show.priceMin}}</strong>
+                  <span>起</span>
+                </div>
+              </mt-cell>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="tab-container6">
+              <!-- cell组件 -->
+              <mt-cell v-for="(show,index) in shows" :key="index">
+                <img :src="show.coverUrl" alt />
+                <div class="list_right">
+                  <span>{{show.performanceTime}}</span>
+                  <span>{{show.performanceDate}}</span>
+                  <h3>{{show.title}}</h3>
+                  <p>{{show.performancePlace}}</p>
+                  <strong class="howMoney">￥{{show.priceMin}}</strong>
+                  <span>起</span>
+                </div>
+              </mt-cell>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="tab-container7">
+              <!-- cell组件 -->
+              <mt-cell v-for="(show,index) in shows" :key="index">
+                <img :src="show.coverUrl" alt />
+                <div class="list_right">
+                  <span>{{show.performanceTime}}</span>
+                  <span>{{show.performanceDate}}</span>
+                  <h3>{{show.title}}</h3>
+                  <p>{{show.performancePlace}}</p>
+                  <strong class="howMoney">￥{{show.priceMin}}</strong>
+                  <span>起</span>
+                </div>
+              </mt-cell>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="tab-container8">
+              <!-- cell组件 -->
+              <mt-cell v-for="(show,index) in shows" :key="index">
+                <img :src="show.coverUrl" alt />
+                <div class="list_right">
+                  <span>{{show.performanceTime}}</span>
+                  <span>{{show.performanceDate}}</span>
+                  <h3>{{show.title}}</h3>
+                  <p>{{show.performancePlace}}</p>
+                  <strong class="howMoney">￥{{show.priceMin}}</strong>
+                  <span>起</span>
+                </div>
+              </mt-cell>
+            </mt-tab-container-item>
+            <mt-tab-container-item id="tab-container9">
+              <!-- cell组件 -->
+              <mt-cell v-for="(show,index) in shows" :key="index">
+                <img :src="show.coverUrl" alt />
+                <div class="list_right">
+                  <span>{{show.performanceTime}}</span>
+                  <span>{{show.performanceDate}}</span>
+                  <h3>{{show.title}}</h3>
+                  <p>{{show.performancePlace}}</p>
+                  <strong class="howMoney">￥{{show.priceMin}}</strong>
+                  <span>起</span>
+                </div>
+              </mt-cell>
+            </mt-tab-container-item>
+          </mt-tab-container>
+        </div>
       </div>
-    </div>
+      <!-- <van-popup v-model="show">
+          <h3>城市</h3>
+          <ul>
+            <li v-for="(city,index) in cities" :key="index">{{city}}</li>
+          </ul>
+        </van-popup> -->
     </div>
   </div>
 </template>
 <script>
 // 引入BScroll
-import BScroll from "better-scroll";
+import Bscroll from "better-scroll";
+// 引入vant
+//import { Popup } from 'vant';
 // 引入reqShows
 import { reqShows } from "../../api/index.js";
 export default {
   data() {
     return {
       shows: [], // 遍历的数据
-      active: "tab-container1"
+      cities:[],// 遍历的数据
+      active: "tab-container1",
+      show:false // 弹出层是否展示
     };
   },
-  components: {
-    //ShowsList
-  },
-  created() {
-    this.$nextTick(() => {
-      this.contentScroll();
-    });
-  },
+  // 加载数据
   async mounted() {
     let result = await reqShows();
-    this.shows = result.detail;
-    console.log(result);
+    this.shows = result.showsDetail;
+    this.cities = result.showsCity
+
+    //横向滑动
+    this.$nextTick(() => {
+      if (!this.scroll) {
+        this.scroll = new Bscroll(this.$refs.center_left, {
+          startX: 0,
+          click: true,
+          scrollX: true,
+          scrollY: false
+        });
+      } else {
+        this.scroll.refresh();
+      }
+    });
   },
-  methods: {
-    contentScroll() {
-      //this.$nextTick是一个异步函数，为了确保DOM已经渲染
-      this.$nextTick(() => {
-        if (!this.scroll) {
-          this.scroll = new BScroll(this.$refs.wrapper, {
-            startX: 0,
-            click: true,
-            scrollX: true,
-            scrollY: false
-          });
-        } else {
-          this.scroll.refresh();
-        }
-      });
-    }
-  }
+  // methods:{
+  //   showPopup(){
+  //     this.show = true
+  //   }
+  // }
 };
 </script>
 <style lang='stylus' rel='stylesheet/stylus'>
@@ -295,7 +269,7 @@ export default {
       width 100%
       .mint-cell
         height 170px
-        img 
+        img
           width 28%
           height 80%
           padding 7% 0
