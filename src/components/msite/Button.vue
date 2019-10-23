@@ -77,7 +77,7 @@ export default {
   width 100%
   height 100%
   margin 10px 0
-  background-color lightgray
+  // background-color lightgray
   text-align center
   .button-item
     box-sizing border-box
@@ -87,7 +87,7 @@ export default {
     display inline-block
     .button-img
       box-sizing border-box
-      width 100%
+      width 95%
       height 60%
       display block
     .button-text

@@ -112,6 +112,7 @@ export default {
 #app
 	width 100%
 	height 100%
+	padding-bottom 60px
 	.fuction
 		width 100%
 		height 100%
@@ -124,7 +125,7 @@ export default {
 			justify-content space-around
 			.fuction-item
 				width 175px
-				height 111px
+				height 100px
 				display inline-block
 				text-align center
 				line-height 16px
@@ -134,14 +135,14 @@ export default {
 				margin 5px
 			.fuction-title
 				width 100%
-				height 160px
+				height 30px
 				font-size 16px
 				font-weight 700
 				display inline
 				float left
 			.fuction-text
-				width 10px
-				height 10px
+				width 120px
+				height 20px
 				font-size 12px
 				display inline-block
 				float left
@@ -152,7 +153,7 @@ export default {
 				font-size 14px
 			.fuction-img
 				width 50px
-				height 50px
+				height 65px
 				float right
 		.fuction-second
 			width 100%
@@ -160,8 +161,8 @@ export default {
 			display flex
 			justify-content space-around
 			.fuction-item
-				width 111px
-				height 111px
+				width 120px
+				height 100px
 				display inline-block
 				background-color white
 				display flex

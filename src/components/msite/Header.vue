@@ -73,7 +73,7 @@ export default {
     height 100%
     width 60%
     box-sizing border-box
-    padding 1%
+    padding 3px
     text-align center
 		color white
 		.search-text
@@ -91,7 +91,7 @@ export default {
 				top 1%
 				left 1%
   .share
-    height 80%
+    height 100%
     width 20%
     box-sizing border-box
     padding 1%

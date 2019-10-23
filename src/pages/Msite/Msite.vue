@@ -17,9 +17,13 @@
         <!-- 引入Purchase组件 -->
         <Purchase :Purchase="Purchase" />
       </div>
-      <div class="msite-FunctionalArea" :functionalAreas="functionalAreas">
+      <div class="msite-FunctionalArea" >
         <!-- 引入FunctionalArea组件 -->
-        <FunctionalArea />
+        <FunctionalArea :functionalAreas="functionalAreas"/>
+      </div>
+			<div class="msite-HotPerformance" >
+        <!-- 引入FunctionalArea组件 -->
+        <HotPerformance :HotPerformance="HotPerformance"/>
       </div>
     </div>
   </div>
@@ -35,8 +39,8 @@ import SwiperFirst from "../../components/msite/SwiperFirst"
 import Header from "../../components/msite/Header"
 // 引入Header组件
 import Purchase from "../../components/msite/Purchase"
-// 引入Vue
-// import Vue from 'vue'
+// 引入HotPerformance组件
+import HotPerformance from "../../components/msite/HotPerformance"
 // 引入BScroll组件
 import BScroll from 'better-scroll'
 // 声明使用
@@ -50,7 +54,8 @@ export default {
       arrImg: [],
       buttons: {},
       functionalAreas: {},
-      Purchase: {}
+			Purchase: {},
+			HotPerformance:[]
     }
   },
   async mounted () {
@@ -72,11 +77,13 @@ export default {
     let result = await reqMessage()
     // 用已有变量接数组
     this.arrImg = result.msiteDetail.Rotation
-    console.log(this.arrImg)
+    // console.log(this.arrImg)
     this.buttons = result.msiteDetail.button
-		console.log(this.buttons)
+		// console.log(this.buttons)
 		this.functionalAreas = result.msiteDetail.FunctionalArea
-    console.log(this.functionalArea)
+		// console.log(this.functionalArea)
+		this.HotPerformance = result.msiteDetail.HotPerformance
+    console.log(this.HotPerformance)
 
   },
   components: {
@@ -84,7 +91,8 @@ export default {
     FunctionalArea,
     SwiperFirst,
     Header,
-    Purchase
+		Purchase,
+		HotPerformance
   }
 }
 </script>
@@ -97,22 +105,26 @@ export default {
     position relative
     .msite-header
       width 100%
-      height 10%
+      height 30px
       position absolute
       top 0
       left 0
       z-index 5
     .msite-sectionSwiperOne
       width 100%
-      height 30%
+      height 196px
     .msite-button
       width 100%
-      height 20%
+      height 105px
     .msite-Purchase
       width 100%
-      height 40%
+      height 215px
       background-color red
     .msite-FunctionalArea
       width 100%
-      height 50%
+      height 220px
+		.msite-HotPerformance
+			width 100%
+      height 250px
+			background-color blue
 </style>
