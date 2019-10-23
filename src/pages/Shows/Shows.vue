@@ -37,7 +37,7 @@
         </li>
       </ul>
       </div>-->
-      <div class="center_left" ref="wrapper">
+      <div class="center_left" >
         <div class="nav">
           <mt-button size="small" @click.native.prevent="active = 'tab-container1'">全部</mt-button>
           <mt-button size="small" @click.native.prevent="active = 'tab-container2'">演唱会</mt-button>
@@ -221,7 +221,7 @@ export default {
       //this.$nextTick是一个异步函数，为了确保DOM已经渲染
       this.$nextTick(() => {
         if (!this.scroll) {
-          this.scroll = new BScroll(this.$refs.wrapper, {
+          this.scroll = new BScroll('.center_left', {
             startX: 0,
             click: true,
             scrollX: true,
