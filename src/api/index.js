@@ -27,3 +27,20 @@ export const reqMessage = () => ajax({
 	method: 'GET',
 	url: BASE + '/get_msite_detail'
 })
+export const reqPwdLogin = ()=>ajax({
+  method:'GET', // 请求类型
+  url: BASE + '/login_pwd/'// 请求地址，携带参数
+})
+// -------------------------------------请求模板---------------------
+
+// 请求剧院页面的场馆信息
+export const reqCinemasInfo =()=>ajax({
+  method:'GET',
+  url: BASE+'/cinemas_info'
+})
+
+// 请求商品列表
+export const reqDetailInfo = ()=>ajax({
+  method:'GET',
+  url: BASE+'/get_detail_info'
+})

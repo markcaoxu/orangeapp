@@ -7,19 +7,15 @@
         <div class="perform-header">
           <!-- 上半部分 -->
           <div class="header-top">
-            <span class="iconfont icon-arrow-left"></span>
+            <span class="iconfont icon-arrow-left" @click="$router.back()"></span>
             <span class="header-text">演出详情</span>
             <span class="iconfont icon-fenxiang"></span>
-            <span class="iconfont icon-home"></span>
+            <span class="iconfont icon-home" @click="$router.replace('/profile')"></span>
           </div>
           <!-- 下半部分 -->
           <div class="header-bottom">
             <div class="left-img">
-              <img
-                class="img-big"
-                src="https://image.juooo.com/group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg"
-                alt
-              />
+              <img class="img-big" :src="detail.coverUrl" alt />
               <img
                 class="img-small"
                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADoAAABGCAYAAACdW4eSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTExIDc5LjE1ODMyNSwgMjAxNS8wOS8xMC0wMToxMDoyMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ1MjYyNjY3RjhBNzExRTZBQ0M4QjMyMDRDMkNENjk5IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ1MjYyNjY4RjhBNzExRTZBQ0M4QjMyMDRDMkNENjk5Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDUyNjI2NjVGOEE3MTFFNkFDQzhCMzIwNEMyQ0Q2OTkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDUyNjI2NjZGOEE3MTFFNkFDQzhCMzIwNEMyQ0Q2OTkiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4a1BqAAAAEuUlEQVR42uxaSWgUQRStnhkVRAQ1egieRHAB8ShINCrugUgUxEgMKOTiyaMgeBACHj15CSiEYFTQSCCKCmo0CB5VcAHxFHLQuICimGSm/a+mftvTVC81052ZmCp4TKanl3p/efXrd5yp/S2umAcjJ+bJsEQtUUvUErVELVFL1BK1RC1RSzTDUbjUJxF5zsCQyHWelH/nz/VKGD0j6YlO6x5ROHs+8pzS2FORa9ke+vv0gW3xlicy+e5TFcfcL5PCfftG5LZsFbm2dnms2Hc5G6Lu6EMxTYBlSyPDojR4tcLafKyouRbWdzZsTPQc3CN4b5AsjT2RhnbfvxMzZ3rMo6aaUIPFg1bnseDeMzFz8YI0jOcl8jK8rQtHZ0VTxbUg4qxbL4r9V4SzZm3Ze73nykZo2eEZDNdizHR1JItI0w5DlEfdifHyd7I8iGGC8CaIRoUtE/R7CsckkYDRkMtsCDzP/9useZQfyiHOk8WkonJfJ06c81IXAtoAo+D5MEKmoYuJBz1a7XCaV5c/yUsyl1euEqKpyYuAYow4Ful6/1xSJRoMI/YycopFg1WWJ4TfONcqVJaUFKoqJidliAdDNU4cExs0aY7qlhf2LOcoyIRNFmEcjAR/fsrJf/4kPYrPqGWKw9dEfZ0s2p1BNQ3zEtZMGEeGK86jifNyAnUNU1TOYROihVpJhFl7OoHsY/HHwp/vOPrPKHSdadWTCVG/laVlSThwjCsaXlbi1lY5KC/lMR9RL9TImKzaYcbMtNYFIUxA5hblUrAUQ8hxTcrn6oqFqNCDoaRhSKQgaH7wsmNaHRnXuvxwP/GCEhr2OMjxOptURbVrMnkaqcJRxCGtU+/UPCrlnAjyQ0GcCQWrHnyXhTiFVzUk/R5HCHsRQkocVXxkJkZRZR3nra68ixq6vPRXYsGqLGnEFExyEw9Iqqj+nYhHmLwcV4Qn2cpVVYHZ14aW6Dwn6u/ppHGvuB5S3YiiPpU7GM3+8r/yKBZxuSHWlHONMIxUl9siVRcAIdu3NO6TasEArxVj1lnTSejWTa6Pg6WerhVqVbcRifpVlsXM/fghPIVIB0xDvu5EZZeBaufSi+eVKq5ap9oUGrrpXVu3DoOuPcl7SG1zrK1d1sDcS+KuYFSe4ze357RsrCXpANbcYahVjGR7k4zm7896XcG4DcPIsJEw1TV00Y0I7lnRPkXxoT1fvaLgnZF/M566R9Mcwegw7SCYbOkaZnlB6Ie9jKrIzwRh3bBEozqIFaGr+r+z0kpJe3BZGUuS1lfkb5zHa651k7zxjt3hBFopUa8U/e91vOurfAlsWymWqCVqiVqilqglaolaovWodb8T7ipwswd904OENsLSzPe+GZaAXwm3CbcIjwhTIectIuwiHCEcJiybC0R/EoYJg4QHEeREBOl9hE4C/l91cSMR/UO4r8iB5K+U5rZEkQXpvYSF9SCKhv0o4ZoKz28Zp9hyFdbHCa3ViKgp0ZeEfsJ1wkSdBLSZ0KWwKU2i48pzA4TXDbZqbCZ0E44pAxgT/aHUEuQeE0oNvkzmCbsJJwiHVH6HEi0qUQG5O4Tfc7Q2AMkO5emdygiS6Cv6RDf4Rh3zLst8hoB1/xVgAOy8jTaoIQsHAAAAAElFTkSuQmCC"
@@ -27,19 +23,19 @@
               />
             </div>
             <div class="right-text">
-              <div class="top-text">陈佩斯、杨立新主演喜剧《戏台》-石家庄</div>
-              <div class="bottom-text">¥180-1080</div>
+              <div class="top-text">{{detail.title}}</div>
+              <div class="bottom-text">¥{{detail.priceRange}}</div>
             </div>
           </div>
         </div>
         <!-- 脚 -->
         <div class="perform-footer">
           <p class="line01">
-            10/31 - 11/01
+            {{detail.performanceTime}}
             <span class="iconfont icon-arrow-right"></span>
           </p>
-          <p class="line02">石家庄 | 石家庄大剧院-大剧场</p>
-          <p class="line03">河北省石家庄市裕华区塔南路72号</p>
+          <p class="line02">{{detail.performancePlace}}</p>
+          <p class="line03">{{detail.performanceDetailedPlace}}</p>
           <div class="img04"></div>
         </div>
       </div>
@@ -58,68 +54,47 @@
           <li>
             <span class="span01">领 券</span>
             <span>：</span>
-            <span class="bgimg">满500减40</span>
-            <span class="bgimg">满11减10</span>
+            <span class="bgimg">{{detail.ticket[0]}}</span>
+            <span class="bgimg">{{detail.ticket[1]}}</span>
             <span class="iconfont icon-gengduo three-point"></span>
           </li>
           <li>
             <span class="span01">VIP+</span>
             <span>：</span>
             <span class="span02">V+会员享</span>
-            <span class="span03">国内包邮 + 双倍积分</span>
+            <span class="span03">{{detail.vip}}</span>
             <span class="iconfont icon-arrow-right three-point"></span>
           </li>
           <li>
             <span class="span01">入场</span>
             <span>：</span>
-            <span class="span02">1.1米以上或5周岁以上儿童凭票入场</span>
+            <span class="span02">{{detail.childrenRules}}</span>
           </li>
           <li>
             <span class="span01">支持</span>
             <span>：</span>
-            <span class="span04">在线选座</span>
+            <span class="span04">{{detail.support[0]}}</span>
             <span>|</span>
-            <span class="span04">电子票</span>
+            <span class="span04">{{detail.support[1]}}</span>
             <span>|</span>
-            <span class="span04">同城满200包邮</span>
+            <span class="span04">{{detail.support[2]}}</span>
           </li>
         </ul>
       </div>
       <!-- 描述 describe -->
       <div class="detail-describe">
         <p class="desc-title">演出介绍</p>
-        <p class="first-line">《戏台》唱念做打演历史，历史风云变化筑《戏台》</p>
-        <p class="other-line">一部被誉为“当代舞台喜剧的又一座高峰”的原创舞台喜剧作品；</p>
-        <p class="other-line">一部一经演轰动京城，口碑载道，场场爆满的原创舞台喜剧作品；</p>
+        <p class="first-line">{{detail.performDescribe.performDescribeTitle}}</p>
+        <p class="other-line">{{detail.performDescribe.performDescribeContent01[0]}}</p>
+        <p class="other-line">{{detail.performDescribe.performDescribeContent01[1]}}</p>
         <p class="other-line">一部杨立新说剧本“四十年难遇”，陈佩斯说“等了它60年”的剧本；</p>
         <p>
-          <br />
+          <img class="img01" :src="detail.performDescribe.performDescribeImg01" alt />
         </p>
+        <p class="other-line">{{detail.performDescribe.performDescribeContent02[0]}}</p>
+        <p class="other-line">{{detail.performDescribe.performDescribeContent02[1]}}</p>
         <p>
-          <img
-            class="img01"
-            src="https://image.juooo.com/group1/M00/01/D2/rAoKmVwkpimAVgJfAAW7gYL9pAw045.png"
-            alt
-          />
-        </p>
-        <p>
-          <br />
-        </p>
-        <p class="other-line">《戏台》是一部思想精深、艺术精湛的喜剧作品，是一部从文本上就叫得响、留得下的好戏。</p>
-        <p
-          class="other-line"
-        >在选材上，《戏台》可谓是“台上见台，戏中有戏”。它将舞台进行180度大翻转，一向神秘的后台变成向观众开放的舞台，深入后台众生相，360度全景式呈现戏台幕后故事。</p>
-        <p
-          class="other-line"
-        >在形式上，《戏台》首次将话剧和京剧艺术融合在一起。《戏台》中，对白混杂念白、台词穿插唱段，京剧和话剧在同一时空里融汇交合，互为推进。在剧作技术层面，《戏台》人物性格鲜明生动、台词语言地道幽默、故事架构智慧精彩：整部作品浑然一体，编剧之功力令人赞叹。</p>
-        <p class="other-line">在剧作主题上，《戏台》以小见大，以方寸舞台演历史变迁，以一代戏班的多舛命途，见“文化之传承”这一古老而永不过时的命题，立意深远，耐人回味。</p>
-        <p>&nbsp;</p>
-        <p>
-          <img
-            class="img01"
-            src="https://image.juooo.com/group1/M00/02/7B/rAoKNVwkpjyAFADxAAYlVnt1oq4859.png"
-            alt
-          />
+          <img class="img01" :src="detail.performDescribe.performDescribeImg02" alt />
         </p>
         <p
           class="other-line"
@@ -162,11 +137,19 @@
 
 <script>
 // 引入better-scroll
-import Bscroll from "better-scroll";
+import BScroll from "better-scroll";
+// 引入vuex的遍历方法
+import { mapState } from "vuex";
+
 export default {
-  mounted() {
+  data () {
+    return {
+      
+    }
+  },
+  async mounted() {
     this.$nextTick(() => {
-      this.scroll = new Bscroll(this.$refs.wrapper, {
+      this.scroll = new BScroll(this.$refs.wrapper, {
         scrollY: true,
         click: true,
         startY: 0,
@@ -178,6 +161,14 @@ export default {
         }
       });
     });
+
+  },
+  // 计算属性中监视vuex中的数据变化，如果有变化，则遍历更新到页面
+  computed: {
+    // 获取vuex中的商品对象数据
+    ...mapState({
+      detail: state => state.shop.detail
+    })
   }
 };
 </script>
@@ -234,12 +225,11 @@ export default {
         .header-bottom
           width 100%
           height 225px
-          background url('https://image.juooo.com/group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg') no-repeat
-          filter 2px
           background-size cover
           background-position 0 -40px
           display flex
           justify-content space-between
+          background-color #02a794
           .left-img
             position relative
             width 35%
@@ -468,7 +458,7 @@ export default {
       flex-direction column
       align-items center
       margin-left 10px
-      span 
+      span
         color #666666
         &:nth-child(1)
           font-size 22px

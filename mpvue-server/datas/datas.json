@@ -1,11 +1,12 @@
 {
   "detail": [{
-      "title": "曹禺经典巨作-话剧《雷雨》-石家庄站",
-      "coverUrl": "https://image.juooo.com/group1/M00/02/91/rAoKmVzYzquAEEiPAAD-QbZWK0w059.gif",
-      "priceRange": "50-500",
-      "priceMin": "50",
+      "name": "喜剧《戏台》",
+      "title": "陈佩斯、杨立新主演喜剧《戏台》-石家庄",
+      "coverUrl": "https://image.juooo.com/group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg",
+      "priceRange": "180-1080",
+      "priceMin": "180",
       "performanceTime": "10/31 - 11/01",
-      "performanceDate": "周六",
+      "performanceDate": "",
       "performancePlace": "石家庄 | 石家庄大剧院-大剧场",
       "performanceDetailedPlace": "河北省石家庄市裕华区塔南路72号",
       "ticket": [
@@ -18,6 +19,49 @@
       ],
       "performDescribe": {
         "performDescribeTitle": "《戏台》唱念做打演历史，历史风云变化筑《戏台》",
+        "performDescribeContent01": [
+          "一部被誉为“当代舞台喜剧的又一座高峰”的原创舞台喜剧作品；",
+          "一部一经演轰动京城，口碑载道，场场爆满的原创舞台喜剧作品；"
+        ],
+        "performDescribeImg01": "https://image.juooo.com/group1/M00/02/8D/rAoKNVxJcpyAT6pBAAQzxxc6Iyw808.png",
+        "performDescribeContent02": [
+          "大道文化倾力邀请实力派演员加盟演出，深入挖掘戏曲行艺人，来自北京人民艺术剧院、中国国家话剧院、中国戏曲学院、北京市曲剧团等各大著名院团的精英演员们纷纷加盟，倾情出演。",
+          "在舞台制作上，国内著名舞美设计师刘科栋、灯光设计师邢辛、服装造型师龚元等均为此戏倾注了各自的心血，使得整部舞台呈现考究、精致、大气，完美的传递出作品的精髓，引人入胜。"
+        ]
+      },
+      "remind": [
+        " · 配送说明", " · 订票说明", " · 确认订单", " · 购票提醒"
+      ],
+      "dateOptions": [
+        "2019.10.31 周四", "2019.10.01 周五"
+      ],
+      "timeOption": [
+        "19:30"
+      ],
+      "priceOption": [
+        "180", "280", "480", "680", "880"
+      ]
+    },
+    {
+      "name": "话剧《雷雨》",
+      "title": "曹禺经典巨作-话剧《雷雨》-石家庄站",
+      "coverUrl": "https://image.juooo.com/group1/M00/02/91/rAoKmVzYzquAEEiPAAD-QbZWK0w059.gif",
+      "priceRange": "50-500",
+      "priceMin": "50",
+      "performanceTime": "10/23",
+      "performanceDate": "周六",
+      "performancePlace": "石家庄 | 石家庄大剧院-大剧场",
+      "performanceDetailedPlace": "河北省石家庄市裕华区塔南路72号",
+      "ticket": [
+        "满500减40", "满11减10"
+      ],
+      "vip": "国内免邮 + 双倍积分",
+      "childrenRules": "1.1米以上或5周岁以上儿童凭票入场",
+      "support": [
+        "在线选座", "电子票", "同城满200包邮"
+      ],
+      "performDescribe": {
+        "performDescribeTitle": "",
         "performDescribeContent01": [
           " 经典话剧文本的魅力，就在于经得住与时俱进的解读、阐释与重现 。曹禺先生的经典名作《雷雨》是中国话剧开始走向成熟的标志,齐齐哈尔市话剧团建团60年以来 ,已经三次演绎该剧。",
           "在60、70年代时创作者都是严格按照《雷雨》原著剧本进行排演，而目前这一版本 ,则是导演刘兵先生根据当今的时代精神和审美需求重新改编后的崭新呈现。"
@@ -39,53 +83,11 @@
         "19:30"
       ],
       "priceOption": [
-        "180", "280", "480", "680", "880", "1080"
-      ]
-    }, {
-      "title": "陈佩斯、杨立新主演喜剧《戏台》-石家庄",
-      "coverUrl": "https://image.juooo.com/group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg",
-      "priceRange": "180-1080",
-      "priceMin": "180",
-      "performanceTime": "10/31 - 11/01",
-      "performanceDate": "周六",
-      "performancePlace": "石家庄 | 石家庄大剧院-大剧场",
-      "performanceDetailedPlace": "河北省石家庄市裕华区塔南路72号",
-      "ticket": [
-        "满500减40", "满11减10"
-      ],
-      "vip": "国内免邮 + 双倍积分",
-      "childrenRules": "1.1米以上或5周岁以上儿童凭票入场",
-      "support": [
-        "在线选座", "电子票", "同城满200包邮"
-      ],
-      "performDescribe": {
-        "performDescribeTitle": "《戏台》唱念做打演历史，历史风云变化筑《戏台》",
-        "performDescribeContent01": [
-          "一部被誉为“当代舞台喜剧的又一座高峰”的原创舞台喜剧作品；",
-          "一部一经演轰动京城，口碑载道，场场爆满的原创舞台喜剧作品；",
-          "一部杨立新说剧本“四十年难遇”，陈佩斯说“等了它60年”的剧本；"
-        ],
-        "performDescribeImg01": "https://image.juooo.com/group1/M00/02/8D/rAoKNVxJcpyAT6pBAAQzxxc6Iyw808.png",
-        "performDescribeContent02": [
-          "大道文化倾力邀请实力派演员加盟演出，深入挖掘戏曲行艺人，来自北京人民艺术剧院、中国国家话剧院、中国戏曲学院、北京市曲剧团等各大著名院团的精英演员们纷纷加盟，倾情出演。",
-          "在舞台制作上，国内著名舞美设计师刘科栋、灯光设计师邢辛、服装造型师龚元等均为此戏倾注了各自的心血，使得整部舞台呈现考究、精致、大气，完美的传递出作品的精髓，引人入胜。",
-          "而现场戏曲锣鼓场的乐队演奏，将音乐融汇在情节之中，运用出色。"
-        ]
-      },
-      "remind": [
-        " · 配送说明", " · 订票说明", " · 确认订单", " · 购票提醒"
-      ],
-      "dateOptions": [
-        "2019.10.31 周四", "2019.10.01 周五"
-      ],
-      "timeOption": [
-        "19:30"
-      ],
-      "priceOption": [
-        "180", "280", "480", "680", "880", "1080"
+        "180", "280", "480", "680", "880"
       ]
     },
     {
+      "name": "米兰交响乐团",
       "title": "【万有音乐系】意大利米兰交响乐团2020新年音乐会-石家庄站",
       "coverUrl": "https://image.juooo.com/group1/M00/03/11/rAoKmV1-87eAATVZAACiNRBcAok761.jpg",
       "priceRange": "80-750",
@@ -105,9 +107,15 @@
       "performDescribe": {
         "performDescribeTitle": "从圣诞到新年，万有音乐系用世界名曲伴您度过辞旧迎新的欢乐时光。",
         "performDescribeContent01": [
-          "意大利重量级交响乐团——意大利米兰交响乐团，其核心演奏家们将组成中国巡演乐团阵容。“欧洲的小泽征尔” 的著名指挥家——阿尔弗雷多·路易吉·科尔纳基亚（Alfredo Luigi Cornacchia）将担任本次新年音乐会巡演指挥。“歌剧女神”、花腔女高音艾达·帕利亚努洛（Ida Pagliarulo）以及曾在音乐剧《帕瓦罗蒂》当中，因饰演“帕瓦罗蒂”而被称为“光影中的帕瓦罗蒂”的男高音歌唱家卡塔罗多·加仑（Cataldo Gallone）将担任音乐会巡演的女高音及男高音歌唱家。这只豪华的演出阵容的将共同为中国观众带来诸多世界名曲。"
+          "意大利重量级交响乐团——意大利米兰交响乐团，其核心演奏家们将组成中国巡演乐团阵容。“欧洲的小泽征尔” 的著名指挥家——阿尔弗雷多·路易吉·科尔纳基亚（Alfredo Luigi Cornacchia）将担任本次新年音乐会巡演指挥。",
+          "“歌剧女神”、花腔女高音艾达·帕利亚努洛（Ida Pagliarulo）以及曾在音乐剧《帕瓦罗蒂》当中，因饰演“帕瓦罗蒂”而被称为“光影中的帕瓦罗蒂”的男高音歌唱家卡塔罗多·加仑（Cataldo Gallone）将担任音乐会巡演的女高音及男高音歌唱家。这只豪华的演出阵容的将共同为中国观众带来诸多世界名曲。"
         ],
-        "performDescribeImg01": "https://image.juooo.com///////////group1/M00/03/BA/rAoKNV1-8cuAMk8aAARC06TkCxA533.png"
+        "performDescribeImg01": "https://image.juooo.com///////////group1/M00/03/BA/rAoKNV1-8cuAMk8aAARC06TkCxA533.png",
+        "performDescribeContent02": [
+          "意大利米兰交响乐团由安东尼·莫利纳创建，成立于1952年，该团一经问世便受到世界乐坛青睐。这支由65位乐手组成的乐团又可分为室内乐团，米兰独奏家乐团，米兰乐团，和谐之音乐团和米兰管乐团。",
+          "作为意大利顶级乐团，米兰交响乐团曾录制诸多的音乐唱片，深受古典音乐爱好者的追捧，许多唱片获得了最佳广播电视奖。"
+        ],
+        "performDescribeImg02": "https://image.juooo.com///////////group1/M00/03/11/rAoKmV1-8eOAD7PAAAdHWJWM7O4764.png"
       },
       "remind": [
         " · 配送说明", " · 订票说明", " · 确认订单", " · 购票提醒"
@@ -119,9 +127,10 @@
         "19:30"
       ],
       "priceOption": [
-        "180", "280", "480", "680", "880", "1080"
+        "180", "280", "480", "680", "880"
       ]
     }, {
+      "name": "《蒋公的面子》",
       "title": "话剧《蒋公的面子》--石家庄",
       "coverUrl": "https://image.juooo.com/group1/M00/01/E8/rAoKmVxS0JKALcHWAABmP_sHNe4613.jpg",
       "priceRange": "50-600",
@@ -142,10 +151,14 @@
         "performDescribeTitle": "话剧·喜剧《蒋公的面子》",
         "performDescribeContent01": [
           "这是一个后辈学生根据校史传说虚构的关于前辈老师和校长的故事。",
-          "1943年，陪都重庆，抗战时期。蒋介石亲任国立中央大学（1950年改名南京大学）校长，邀请中文系三位知名教授吃年夜饭。这使三位教授很纠结：去与不去都很为难，要不要给蒋公这个面子呢？",
-          "1967年，旧都南京，“文革”时期。三位教授为此事遭受审查，他们对是否受到蒋介石邀请和是否赴过蒋介石的宴席各有不同的回忆。", "  “《蒋公的面子》，以南京大学校史为题材，通过1943年蒋介石兼任南大前身中央大学校长时，邀请三位中文系教授赴宴的史实，形象地揭示了知识分子面对强权时的复杂心态。《蒋公的面子》继承了“五四”以来启蒙戏剧的脉络，拥有开阔的表现空间，给当代戏剧的发展路径，提供了启示。”"
+          "1943年，陪都重庆，抗战时期。蒋介石亲任国立中央大学（1950年改名南京大学）校长，邀请中文系三位知名教授吃年夜饭。这使三位教授很纠结：去与不去都很为难，要不要给蒋公这个面子呢？"
         ],
-        "performDescribeImg01": "https://image.juooo.com/group1/M00/02/92/rAoKNVxS0XuAP_JiABZCxEGdRUI357.png"
+        "performDescribeImg01": "https://image.juooo.com/group1/M00/02/92/rAoKNVxS0XuAP_JiABZCxEGdRUI357.png",
+        "performDescribeContent02": [
+          "1967年，旧都南京，“文革”时期。三位教授为此事遭受审查，他们对是否受到蒋介石邀请和是否赴过蒋介石的宴席各有不同的回忆。", "  “《蒋公的面子》，以南京大学校史为题材，通过1943年蒋介石兼任南大前身中央大学校长时，邀请三位中文系教授赴宴的史实，形象地揭示了知识分子面对强权时的复杂心态。《蒋公的面子》继承了“五四”以来启蒙戏剧的脉络，拥有开阔的表现空间，给当代戏剧的发展路径，提供了启示。”",
+          "  “《蒋公的面子》，以南京大学校史为题材，通过1943年蒋介石兼任南大前身中央大学校长时，邀请三位中文系教授赴宴的史实，形象地揭示了知识分子面对强权时的复杂心态。《蒋公的面子》继承了“五四”以来启蒙戏剧的脉络，拥有开阔的表现空间，给当代戏剧的发展路径，提供了启示。”"
+        ],
+        "performDescribeImg02": "https://image.juooo.com/group1/M00/01/E8/rAoKmVxS0cWAMPL4AAkJ6wFH-KQ624.png"
       },
       "remind": [
         " · 配送说明", " · 订票说明", " · 确认订单", " · 购票提醒"
@@ -157,9 +170,10 @@
         "19:30"
       ],
       "priceOption": [
-        "180", "280", "480", "680", "880", "1080"
+        "180", "280", "480", "680", "880"
       ]
-    },{
+    }, {
+      "name": "《红楼梦》",
       "title": "上海越剧院《红楼梦》-石家庄站",
       "coverUrl": "https://image.juooo.com/group1/M00/03/84/rAoKNV0wNxyAcuwSAABF4oPR-nM733.jpg",
       "priceRange": "50-300",
@@ -180,10 +194,15 @@
         "performDescribeTitle": "剧情简介",
         "performDescribeContent01": [
           "体弱多病、孤零无依的林黛玉，投奔到外祖母——贾府，与表兄贾宝玉一见如故。",
-          "在大观园里，宝玉与情趣相投的黛玉心心相印，他俩避开了贵族家庭的约束，偷读《西厢记》，抒发着他们的自由思想，也滋长着他们之间的爱情。",
-          "宝玉的父亲望子“成龙”，但宝玉却蔑视功名利禄，反对礼教传统，被黛玉引为知己。贾政无法容忍宝玉的叛逆，借故痛打宝玉。宝玉伤愈，黛玉去访他，恰巧晴雯心中不快，使黛玉尝了“闭门羹”，生成误会。"
+          "在大观园里，宝玉与情趣相投的黛玉心心相印，他俩避开了贵族家庭的约束，偷读《西厢记》，抒发着他们的自由思想，也滋长着他们之间的爱情。"
         ],
-        "performDescribeImg01": "https://image.juooo.com///group1/M00/03/84/rAoKNV0wNpGAVuOHAAaWzl8CadA038.png"
+        "performDescribeImg01": "https://image.juooo.com///group1/M00/03/84/rAoKNV0wNpGAVuOHAAaWzl8CadA038.png",
+        "performDescribeContent02": [
+          "宝玉的父亲望子“成龙”，但宝玉却蔑视功名利禄，反对礼教传统，被黛玉引为知己。贾政无法容忍宝玉的叛逆，借故痛打宝玉。宝玉伤愈，黛玉去访他，恰巧晴雯心中不快，使黛玉尝了“闭门羹”，生成误会。",
+          "落花飞雪，黛玉触景伤情，葬花赋词，抒发精神上的压抑。宝玉听到“葬花词”，向她吐露了爱意。"
+
+        ],
+        "performDescribeImg02": "https://image.juooo.com///group1/M00/02/DA/rAoKmV0wNp6ADAhlAAalL0n9swc293.png"
       },
       "remind": [
         " · 配送说明", " · 订票说明", " · 确认订单", " · 购票提醒"
@@ -195,11 +214,57 @@
         "19:30"
       ],
       "priceOption": [
-        "180", "280", "480", "680", "880", "1080"
+        "180", "280", "480", "680", "880"
+      ]
+    },
+    {
+      "name": "龙猫与他的小伙伴",
+      "title": "【万有音乐系】“龙猫与他的小伙伴”宫崎骏2019动漫视听音乐会-柳州站",
+      "coverUrl": "https://image.juooo.com/group1/M00/01/B3/rAoKNVqPgs2AcHacAADU3dzhHHA881.jpg",
+      "priceRange": "80-288",
+      "priceMin": "80",
+      "performanceTime": "12/21",
+      "performanceDate": "周六",
+      "performancePlace": "柳州 | 柳钢文化中心",
+      "performanceDetailedPlace": "柳州市柳北区北雀路117号",
+      "ticket": [
+        "满400减30", "满11减10"
+      ],
+      "vip": "国内免邮 + 双倍积分",
+      "childrenRules": "一人一票，凭票进场，儿童全票",
+      "support": [
+        "在线选座", "电子票", "同城满200包邮"
+      ],
+      "performDescribe": {
+        "performDescribeTitle": "与宫崎骏·久石让一起走过的30年",
+        "performDescribeContent01": [
+          "　 　《千与千寻》、《龙猫》、《天空之城》、《魔女宅急送》、《哈尔的移动城堡》、《幽灵公主》…一个个经典的动漫形象，一曲曲熟悉的儿时音乐，承载着一段段童年的美好憧憬和回忆，也在无数个夜晚伴着我们进入甜蜜梦境。",
+          "当熟悉的旋律再次响起之时，是否会勾起你记忆里那一份纯真、一份童年情结呢？"
+        ],
+        "performDescribeImg01": "https://image.juooo.com/////upload/ueditor/image/20150318/1426669916599410.jpg",
+        "performDescribeContent02": [
+          "30多年来，日本动画大师宫崎骏所创作的动画，其美妙的画面与匪夷所思的想像力让每个观众心驰神往：众多的幽灵，会走动的城堡，飞行物体，猫巴士，龙猫…",
+          "他是一个'可怕'的手工艺术家，在一个高科技的时代，这位动画电影导演用老方法创造了众多不可思议的伟大作品。"
+
+        ],
+        "performDescribeImg02": "https://image.juooo.com/////upload/ueditor/image/20150318/1426670084936040.jpg"
+      },
+      "remind": [
+        " · 配送说明", " · 订票说明", " · 确认订单", " · 购票提醒"
+      ],
+      "dateOptions": [
+        "2019.12.21 周六", "2019.12.24 周二"
+      ],
+      "timeOption": [
+        "19:30"
+      ],
+      "priceOption": [
+        "180", "280", "480", "680", "880"
       ]
     }
   ],
   "swiperDetail": [{
+      "name": "郑伊健演唱會",
       "title": "Along With Ekin Live Concert 2019 郑伊健演唱會新加坡站",
       "coverUrl": "https://image.juooo.com/group1/M00/03/2C/rAoKmV2oFqSAcQ3kAACkgL4n4dc834.jpg",
       "priceRange": "580-1180",
@@ -241,10 +306,11 @@
         "19:30"
       ],
       "priceOption": [
-        "180", "280", "480", "680", "880", "1080"
+        "180", "280", "480", "680", "880"
       ]
     },
     {
+      "name": "音乐剧《芝加哥》",
       "title": "百老汇原版音乐剧《芝加哥》Chicago -南京站",
       "coverUrl": "https://image.juooo.com/group1/M00/03/BA/rAoKNV1_IcWAAKMCAACBad-K3Io772.jpg",
       "priceRange": "180-980",
