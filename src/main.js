@@ -18,6 +18,7 @@ import "../public/css/reset.css"
 // import BScroll from 'better-scroll'
 // // 声明使用
 // Vue.use(BScroll)
+
 // 声明使用
 Vue.use(MintUI)
 // 引入mint-ui中的组件
@@ -28,7 +29,8 @@ import {
 	SwipeItem,
 	TabContainer, 
 	TabContainerItem,
-	Cell
+	Cell,
+	Field
 } from 'mint-ui'
 
 
@@ -43,6 +45,7 @@ Vue.component(Search.name, Search);
 // 声明使用
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Field.name, Field)
 // 声明使用
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);

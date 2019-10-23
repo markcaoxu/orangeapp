@@ -1,6 +1,9 @@
 <template>
   <div>
    <SearchInput/>
+   <ul class="resultList">
+   <li class="resultItem"></li>
+   </ul>
   </div>
 </template>
 
@@ -33,6 +36,14 @@ import SearchInput from '../../components/SearchInput/index'
   }
 
 </script>
-<style lang='' scoped>
-
+<style lang="stylus" rel="stylesheet/stylus" scoped>
+// 引入混合
+@import '../../common/stylus/mixins.styl'
+.resultList
+  width 100%
+  height 100%
+  .resultItem
+    width 345px
+    height 145px
+    background-color pink 
 </style>

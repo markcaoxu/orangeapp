@@ -56,6 +56,8 @@ export default {
       // 发送请求获取数据
       let inputText = await reqSearch();
       //console.log(inputText)
+      //输入完成跳转result路由
+      this.$router.push("/result");
     },
     //点击清除图标，清空inputText内容
     deleteTExt() {

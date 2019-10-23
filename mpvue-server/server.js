@@ -15,6 +15,8 @@ let login = require('./datas/login.json')
 let msite = require('./datas/msite.json')
 // 引入剧场数据
 let cinemaInfo = require('./datas/cinema.json')
+// 引入城市数据
+let city = require('./datas/city.json')
 
 
 // 登录接口
@@ -37,6 +39,7 @@ koaRouter.get('/get_detail_info',(ctx)=>{
     detail
   }
 })
+
 
 // 轮播图信息的接口
 koaRouter.get('/get_swiper',(ctx)=>{
@@ -61,13 +64,18 @@ koaRouter.get('/cinemas_info',(ctx)=>{
     cinemasInfo
   }
 })
+
 // 请求详情列表的接口
-// koaRouter.get('get_msite_detail',(ctx)=>{
-//   const msiteDetail = msite.Home
-//   ctx.body={
-//     msiteDetail
-//   }
-// })
+koaRouter.get('/shows',(ctx)=>{
+  const showsDetail = datas.detail
+  const showsCity = city.cities
+  ctx.body={
+    showsDetail,
+    showsCity
+  }
+})
+
+
 
 // 声明使用所有的路由及路由的相关的所有的方法
 koa

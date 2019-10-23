@@ -29,11 +29,25 @@ export const reqSearch = () => ajax({
   method: 'GET',
   url: BASE + '/get_detail_info'
 })
+
+// -------------------------------------请求模板---------------------
 // export const reqPwdLogin = ()=>ajax({
+  // get请求
 //   method:'GET', // 请求类型
 //   url: BASE + '/login_pwd/'// 请求地址，携带参数
 // })
+// post请求
+// 	method: 'POST', // 请求类型
+// 	url: BASE + `/login_pwd?username=${username}&password=${password}` // 请求地址，携带参数
+// })
 // -------------------------------------请求模板---------------------
+
+// 请求 msite首页  信息
+export const reqMessage = () => ajax({
+	method: 'GET',
+	url: BASE + '/get_msite_detail'
+})
+
 
 // 请求剧院页面的场馆信息
 export const reqCinemasInfo =()=>ajax({
@@ -45,4 +59,10 @@ export const reqCinemasInfo =()=>ajax({
 export const reqDetailInfo = ()=>ajax({
   method:'GET',
   url: BASE+'/get_detail_info'
+})
+
+// 请求商品列表
+export const reqShows = ()=>ajax({
+  method:'GET',
+  url: BASE+'/shows'
 })
