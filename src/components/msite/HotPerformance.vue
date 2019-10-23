@@ -15,7 +15,6 @@
 <script>
 export default {
 	props:['HotPerformance']
-
 }
 </script>
 <style lang='stylus'>
@@ -34,9 +33,9 @@ export default {
 			width 50%
 			height 100%
 			float right
-	.HotPerformance-list
-		
-		.HotPerformance-item
-			.HotPerformance-img
-			.HotPerformance-name
+	// .HotPerformance-list
+
+	// 	.HotPerformance-item
+	// 		.HotPerformance-img
+	// 		.HotPerformance-name
 </style>
