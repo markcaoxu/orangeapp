@@ -3,7 +3,7 @@
     <!-- 个人中心 -->
     <div class="profileBody">
       <div class="profileHeader">
-        <a class="setting">
+        <a class="setting" @click="$router.push('/security')">
           <!--设置的 icon 图标 -->
           <span class="iconfont icon-shezhi"></span>
         </a>
@@ -109,13 +109,18 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  methods:{
+    
+  }
+}
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus'>
 .profileContainer
   width 100%
   height 100%
+  background-color #f5f5f5
   .profileBody
     position relative
     display flex
@@ -123,7 +128,6 @@ export default {};
     align-items center
     width 100%
     height 80%
-    background-color #f5f5f5
     .profileHeader
       width 100%
       background url('./imgs/head.png') no-repeat top
