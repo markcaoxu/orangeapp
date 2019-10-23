@@ -17,6 +17,7 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 // 引入reset.css文件
 import "../public/css/reset.css"
+
 // 声明使用
 Vue.use(MintUI)
 // 引入mint-ui中的组件
@@ -25,6 +26,7 @@ import {
 	Search,
 	Swipe,
 	SwipeItem,
+	Field,
 	TabContainer, 
 	TabContainerItem,
 	Cell
@@ -42,6 +44,7 @@ Vue.component(Search.name, Search);
 // 声明使用
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
+Vue.component(Field.name, Field)
 // 声明使用
 Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);

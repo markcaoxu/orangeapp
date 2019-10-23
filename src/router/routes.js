@@ -9,6 +9,10 @@ import Search from '../pages/Seach/Seach.vue'
 
 // 商品详情页
 import Detail from '../pages/Detail/Detail.vue'
+// 个人信息页
+import Security from '../pages/Profile/Security/Security.vue'
+// 登录注册页面
+import Login from '../pages/Login/Login.vue'
 
 
 // 暴露路由
@@ -62,6 +66,15 @@ export default [
   {
     path:'/detail',
     component: Detail
+  },
+  //  个人信息页
+  {
+    path: '/security',
+    component: Security
+  },
+  {
+    path: '/login',
+    component: Login
   },
   // 重定向
   {

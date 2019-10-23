@@ -40,3 +40,15 @@ export const reqDetailInfo = ()=>ajax({
   method:'GET',
   url: BASE+'/get_detail_info'
 })
+
+// 请求自动获取商品信息的
+export const reqAutoGetDetail=(name)=>ajax({
+  method:'GET',
+  url:BASE+`/autoGetDetail?name=${name}`
+})
+
+// 请求商品列表
+export const reqShows = ()=>ajax({
+  method:'GET',
+  url: BASE+'/shows'
+})
