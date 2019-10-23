@@ -1,26 +1,37 @@
 <template>
   <div id='app'>
     <section class="button-list">
-      <div class="button-item">
+
+			<!-- 演唱会 -->
+      <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.VocalConcert.img alt="">
         <span class="button-text">{{button.VocalConcert.name}}</span>
       </div>
-			<div class="button-item">
+
+			<!-- 音乐剧 -->
+      <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.MusicalPlay.img alt="">
         <span class="button-text">{{button.MusicalPlay.name}}</span>
       </div>
-			<div class="button-item">
+
+			<!-- 舞台剧 -->
+      <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.LivingTheatre.img alt="">
         <span class="button-text">{{button.LivingTheatre.name}}</span>
       </div>
-			<div class="button-item">
+
+			<!-- 儿童剧 -->
+      <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.DramaForChildren.img alt="">
         <span class="button-text">{{button.DramaForChildren.name}}</span>
       </div>
-			<div class="button-item">
+
+			<!-- 音乐会 -->
+      <div class="button-item" @click="goTo('/detail')">
         <img class="button-img" :src=button.Concert.img alt="">
         <span class="button-text">{{button.Concert.name}}</span>
       </div>
+			
     </section>
   </div>
 </template>
@@ -51,33 +62,36 @@ export default {
         }
       }
     }
+  },
+  methods: {
+    goTo (path) {
+      if (this.$router.path !== path) {
+        this.$router.path = path
+      }
+    }
   }
 }
 </script>
 <style lang='stylus'>
-#app
-	width 100%
-	height 100%
-	.button-list
-		width 100%
-		height 15%
-		margin 10px 0
-		background-color lightgray 
-		text-align center
-		.button-item
-			box-sizing border-box
-			padding 5px
-			width 20%
-			height 100%
-			display inline-block
-			.button-img
-				box-sizing border-box
-				width 60%
-				height 60%
-				display block
-				margin 3px 12px 
-			.button-text
-				margin-top 5px
-				width 60%
-				height 20%
+.button-list
+  width 100%
+  height 100%
+  margin 10px 0
+  background-color lightgray
+  text-align center
+  .button-item
+    box-sizing border-box
+    padding 2%
+    width 20%
+    height 100%
+    display inline-block
+    .button-img
+      box-sizing border-box
+      width 100%
+      height 60%
+      display block
+    .button-text
+      margin-top 5px
+      width 60%
+      height 20%
 </style>
