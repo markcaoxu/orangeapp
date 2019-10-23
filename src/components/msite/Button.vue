@@ -3,31 +3,31 @@
     <section class="button-list">
 
       <!-- 演唱会 -->
-      <div class="button-item" @click="goTo('/detail')" :vocal="buttons.VocalConcert">
+      <div class="button-item" @click="goTo('/Shows')" :vocal="buttons.VocalConcert">
         <img class="button-img" :src=buttons.VocalConcert.img alt="">
         <span class="button-text">{{buttons.VocalConcert.name}}</span>
       </div>
 
       <!-- 音乐剧 -->
-      <div class="button-item" @click="goTo('/detail')" :play="buttons.MusicalPlay">
+      <div class="button-item" @click="goTo('/Shows')" :play="buttons.MusicalPlay">
         <img class="button-img" :src=buttons.MusicalPlay.img alt="">
         <span class="button-text">{{buttons.MusicalPlay.name}}</span>
       </div>
 
       <!-- 舞台剧 -->
-      <div class="button-item" @click="goTo('/detail')" :living="buttons.LivingTheatre">
+      <div class="button-item" @click="goTo('/Shows')" :living="buttons.LivingTheatre">
         <img class="button-img" :src=buttons.LivingTheatre.img alt="">
         <span class="button-text">{{buttons.LivingTheatre.name}}</span>
       </div>
 
       <!-- 儿童剧 -->
-      <div class="button-item" @click="goTo('/detail')" :children="buttons.DramaForChildren">
+      <div class="button-item" @click="goTo('/Shows')" :children="buttons.DramaForChildren">
         <img class="button-img" :src=buttons.DramaForChildren.img alt="">
         <span class="button-text">{{buttons.DramaForChildren.name}}</span>
       </div>
 
       <!-- 音乐会 -->
-      <div class="button-item" @click="goTo('/detail')" :music="buttons.Concert">
+      <div class="button-item" @click="goTo('/Shows')" :music="buttons.Concert">
         <img class="button-img" :src=buttons.Concert.img alt="">
         <span class="button-text">{{buttons.Concert.name}}</span>
       </div>
