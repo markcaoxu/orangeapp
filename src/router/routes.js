@@ -4,6 +4,7 @@ import Cinema from '../pages/Cinema/Cinema.vue'
 import Ticket from '../pages/Ticket/Ticket.vue'
 import Profile from '../pages/Profile/Profile.vue'
 import Shows from '../pages/Shows/Shows.vue'
+import Result from '../pages/Result/Result.vue'
 // 引入搜索框酷游组件
 import Search from '../pages/Seach/Seach.vue'
 
@@ -59,7 +60,15 @@ export default [
     path: '/seach',
     component: Search,
     meta: {
-      isShowFooter: true
+      isShowFooter: false
+    }
+  },
+  //搜索结果路由
+  {
+    path: '/result',
+    component: Result,
+    meta: {
+      isShowFooter: false
     }
   },
   // 商品详情页

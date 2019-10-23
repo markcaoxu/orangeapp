@@ -72,7 +72,11 @@
           <li>
             <span class="span01">支持</span>
             <span>：</span>
-            <span class="span04" v-for="(support,index) in detail.support" :key="index*100+100">{{support}}</span>
+            <span
+              class="span04"
+              v-for="(support,index) in detail.support"
+              :key="index*100+100"
+            >{{support}}</span>
           </li>
         </ul>
       </div>
@@ -152,6 +156,7 @@ export default {
         }
       });
     });
+    // 计算属性中监视vuex中的数据变化，如果有变化，则遍历更新到页面
     // 如果已经请求了数据，刷新将再次请求----vuex中shop模块
     // this.$store.dispatch("autoGetDetail");
     // 发送请求匹配商品详情对象
