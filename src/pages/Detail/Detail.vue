@@ -206,18 +206,12 @@ export default {
         }
       });
     });
-<<<<<<< HEAD
-    // 如果已经请求了数据，刷新将再次请求----vuex中shop模块----发送请求匹配商品详情对象
-    // console.log(this.$store.dispatch('autoGetDetail'));   // 返回的是一个promise对象
-    this.$store.dispatch("autoGetDetail");
-=======
     // 计算属性中监视vuex中的数据变化，如果有变化，则遍历更新到页面
     // 如果已经请求了数据，刷新将再次请求----vuex中shop模块
     // this.$store.dispatch("autoGetDetail");
     // 发送请求匹配商品详情对象
     // console.log(this.$store.dispatch('autoGetDetail'));
     this.$store.dispatch('autoGetDetail')
->>>>>>> b00919fe2e6e791df520364088ac24b11af5ccea
   },
   // 计算属性
   computed: {
