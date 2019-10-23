@@ -54,8 +54,7 @@
           <li>
             <span class="span01">领 券</span>
             <span>：</span>
-            <span class="bgimg">{{detail.ticket[0]}}</span>
-            <span class="bgimg">{{detail.ticket[1]}}</span>
+            <span class="bgimg" v-for="(ticket,index) in detail.ticket" :key="index*10+1">{{ticket}}</span>
             <span class="iconfont icon-gengduo three-point"></span>
           </li>
           <li>
@@ -73,37 +72,31 @@
           <li>
             <span class="span01">支持</span>
             <span>：</span>
-            <span class="span04">{{detail.support[0]}}</span>
-            <span>|</span>
-            <span class="span04">{{detail.support[1]}}</span>
-            <span>|</span>
-            <span class="span04">{{detail.support[2]}}</span>
+            <span class="span04" v-for="(support,index) in detail.support" :key="index*100+100">{{support}}</span>
           </li>
         </ul>
       </div>
       <!-- 描述 describe -->
       <div class="detail-describe">
         <p class="desc-title">演出介绍</p>
-        <p class="first-line">{{detail.performDescribe.performDescribeTitle}}</p>
-        <p class="other-line">{{detail.performDescribe.performDescribeContent01[0]}}</p>
-        <p class="other-line">{{detail.performDescribe.performDescribeContent01[1]}}</p>
-        <p class="other-line">一部杨立新说剧本“四十年难遇”，陈佩斯说“等了它60年”的剧本；</p>
+        <p class="first-line">{{detail.performDescribeTitle}}</p>
+
+        <p
+          class="other-line"
+          v-for="(perContent01,index) in detail.performDescribeContent01"
+          :key="index*1000+1000"
+        >{{perContent01}}</p>
         <p>
-          <img class="img01" :src="detail.performDescribe.performDescribeImg01" alt />
-        </p>
-        <p class="other-line">{{detail.performDescribe.performDescribeContent02[0]}}</p>
-        <p class="other-line">{{detail.performDescribe.performDescribeContent02[1]}}</p>
-        <p>
-          <img class="img01" :src="detail.performDescribe.performDescribeImg02" alt />
+          <img class="img01" :src="detail.performDescribeImg01" alt />
         </p>
         <p
           class="other-line"
-        >大道文化倾力邀请实力派演员加盟演出，深入挖掘戏曲行艺人，来自北京人民艺术剧院、中国国家话剧院、中国戏曲学院、北京市曲剧团等各大著名院团的精英演员们纷纷加盟，倾情出演。</p>
-        <p
-          class="other-line"
-        >在舞台制作上，国内著名舞美设计师刘科栋、灯光设计师邢辛、服装造型师龚元等均为此戏倾注了各自的心血，使得整部舞台呈现考究、精致、大气，完美的传递出作品的精髓，引人入胜。</p>
-        <p class="other-line">而现场戏曲锣鼓场的乐队演奏，将音乐融汇在情节之中，运用出色。</p>
-        <p></p>
+          v-for="(perContent02,index) in detail.performDescribeContent02"
+          :key="index*10000+10000"
+        >{{perContent02}}</p>
+        <p>
+          <img class="img01" :src="detail.performDescribeImg02" alt />
+        </p>
       </div>
       <!-- 温馨提示 remind -->
       <div class="detail-remind">
@@ -138,16 +131,14 @@
 <script>
 // 引入better-scroll
 import BScroll from "better-scroll";
-// 引入vuex的遍历方法
-import { mapState } from "vuex";
 
 export default {
-  data () {
+  data() {
     return {
-      
-    }
+    };
   },
   async mounted() {
+    // 页面滚动事件
     this.$nextTick(() => {
       this.scroll = new BScroll(this.$refs.wrapper, {
         scrollY: true,
@@ -163,11 +154,23 @@ export default {
     });
   },
     // 计算属性中监视vuex中的数据变化，如果有变化，则遍历更新到页面
+    // 如果已经请求了数据，刷新将再次请求----vuex中shop模块
+    // this.$store.dispatch("autoGetDetail");
+    // 发送请求匹配商品详情对象
+    // console.log(this.$store.dispatch('autoGetDetail'));
+    this.$store.dispatch('autoGetDetail')
+  },
   computed: {
-    // 获取vuex中的商品对象数据
-    ...mapState({
-      detail: state => state.shop.detail
-    })
+    // detail:this.$store.state.shop.detail||{}
+    detail:{
+      get(){
+        return this.$store.state.shop.detail
+      },
+      set(val){
+        console.log('hahah sdnashdo');
+        
+      }
+    }
   }
 };
 </script>
@@ -357,8 +360,11 @@ export default {
             &.span03
               color #FF6743
             &.span04
-              padding 0 14px
+              padding 2px
+              margin 0 14px
               font-size 12px
+              border 1px solid #999999
+              border-radius 4px
             &.bgimg
               display inline-block
               width 90px

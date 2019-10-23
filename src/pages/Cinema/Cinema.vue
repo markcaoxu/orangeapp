@@ -93,7 +93,8 @@ export default {
           // 匹配成功，把这个item（匹配的商品对象）存到Vuex中
           this.$store.dispatch('saveDetail',item)
           // 跳转到商品详情页
-          console.log(this)
+
+          // console.log(this)
           this.$router.push('/detail')
         }
       })
@@ -108,7 +109,7 @@ export default {
   height 100%
   .cinema
     width 100%
-    padding-bottom 50px
+    padding-bottom 60px
     // 剧场大头样式
     .cinema-header
       width 100%

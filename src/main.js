@@ -27,10 +27,10 @@ import {
 	Search,
 	Swipe,
 	SwipeItem,
+	Field,
 	TabContainer, 
 	TabContainerItem,
-	Cell,
-	Field
+	Cell
 } from 'mint-ui'
 
 
