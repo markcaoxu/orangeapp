@@ -18,6 +18,7 @@ import Security from '../pages/Profile/Security/Security.vue'
 import Login from '../pages/Login/Login.vue'
 
 
+
 // 暴露路由
 export default [
 	// 首页
@@ -103,5 +104,77 @@ export default [
 	{
 		path: '/',
 		redirect: '/msite'
-	}
+	},
+  // 首页
+  {
+    path: '/msite',
+    component: Msite,
+    meta: {
+      isShowFooter: true
+    }
+  },
+  // 剧院
+  {
+    path: '/cinema',
+    component: Cinema,
+    meta: {
+      isShowFooter: true
+    }
+  },
+  // 票夹
+  {
+    path: '/ticket',
+    component: Ticket,
+    meta: {
+      isShowFooter: true
+    }
+  },
+  // 个人中心
+  {
+    path: '/profile',
+    component: Profile,
+    meta: {
+      isShowFooter: true
+    }
+  },
+  // 详情列表 Show
+  {
+    path:'/show',
+    component: Shows
+  },
+  // 搜索
+  {
+    path: '/seach',
+    component: Search,
+    meta: {
+      isShowFooter: false
+    }
+  },
+  //搜索结果路由
+  {
+    path: '/result',
+    component: Result,
+    meta: {
+      isShowFooter: false
+    }
+  },
+  // 商品详情页
+  {
+    path:'/detail',
+    component: Detail
+  },
+  //  个人信息页
+  {
+    path: '/security',
+    component: Security
+  },
+  {
+    path: '/login',
+    component: Login
+  },
+  // 重定向
+  {
+    path: '/',
+    redirect: '/msite'
+  }
 ]
