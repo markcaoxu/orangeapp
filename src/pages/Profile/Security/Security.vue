@@ -15,19 +15,13 @@
       <div class="top">
         <a href="javascript:;">
           <span>头像</span>
-          <img src="../imgs/avatar.png" alt />
-        </a>
-      </div>
-      <div class="bottom">
-        <a href="javascript:;">
-          <span>昵称</span>
+          <img :src="user._id?user.userImage:''" alt />
         </a>
       </div>
     </div>
     <div class="secField">
       <mt-field label="手机" placeholder="您的手机" type="tel" v-model="phone" class="proMess"></mt-field>
       <mt-field label="密码" placeholder="修改密码" type="password" v-model="password"></mt-field>
-      <mt-field label="生日" placeholder="查看" type="date" v-model="birthday"></mt-field>
     </div>
     <div class="secExit" @click="secExit">
       <p>退出登录</p>
@@ -36,13 +30,19 @@
 </template>
 <script>
 import { Field, MessageBox } from "mint-ui";
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
       phone: "",
       password: "",
-      birthday: ""
+      birthday: "xx/xx/xx"
     };
+  },
+  computed: {
+    ...mapState({
+      user: state => state.login.user
+    })
   },
   methods: {
     secExit() {

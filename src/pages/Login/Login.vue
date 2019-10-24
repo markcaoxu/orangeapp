@@ -4,52 +4,68 @@
       <!-- 切换登录状态 -->
       <div class="login_header">
         <h2 class="login_logo">欢迎来到聚橙网</h2>
-        <div class="login_header_title">
-          <a href="javascript:;" :class="{on:loginWay}" @click="loginWay=true">短信登录</a>
-          <a href="javascript:;" :class="{on:!loginWay}" @click="loginWay=false">密码登录</a>
-        </div>
       </div>
       <!-- 登录内容 -->
       <div class="login_content">
-        <form>
-          <!-- 短信登录 -->
-          <div :class="{on:loginWay}">
-            <section class="login_message">
-              <input type="tel" placeholder="手机号" />
-              <span style="color:red" class="help is-danger">phone</span>
-              <button class="get_verification">获取验证码</button>
-            </section>
-            <section class="login_verification">
-              <input type="tel" placeholder="验证码" />
-              <span style="color:red" class="help is-danger">code</span>
-            </section>
-          </div>
-
+        <form method="POST">
           <!-- 密码登录 -->
-          <div :class="{on:!loginWay}">
-            <section>
-              <section class="login_message">
-                <input type="tel" placeholder="手机/邮箱/用户名" />
-                <span style="color:red" class="help is-danger">name</span>
-              </section>
-              <section class="login_verification">
-                <input type="text" placeholder="密码" />
-                <span style="color:red" class="help is-danger">pwd</span>
-                <div class="switch_button" :class="isPwdShow?'on':'off'" @click="isPwdShow=!isPwdShow">
-                  <div class="switch_circle" :class="{right:isPwdShow}"></div>
-                  <span class="switch_text">{{isPwdShow?'abc':'...'}}</span>
-                </div>
-              </section>
-              <section class="login_message">
-                <input type="text" placeholder="验证码" name="captcha" />
-                <span style="color:red" class="help is-danger">error</span>
-                <img class="get_verification" src="http://localhost:5000/captcha" alt="captcha" />
-              </section>
+          <div>
+            <!-- 用户名：手机 -->
+            <section class="login_message">
+              <input
+                type="tel"
+                placeholder="用户名"
+                v-model="name"
+                name="name"
+                v-validate="'required|phone2'"
+              />
+              <span style="color:red" class="help is-danger">{{ errors.first('name') }}</span>
+            </section>
+            
+            <!-- 密码 -->
+            <section class="login_password">
+              <input
+                :type="isPwdShow?'text':'password'"
+                placeholder="密码"
+                maxlength="8"
+                v-model="pwd"
+                name="pwd"
+                v-validate="'required|min:6'"
+              />
+              <span style="color:red" class="help is-danger">{{ errors.first('pwd') }}</span>
+              <div
+                class="switch_button"
+                :class="isPwdShow?'on':'off'"
+                @click="isPwdShow=!isPwdShow"
+              >
+                <div class="switch_circle" :class="{right:isPwdShow}"></div>
+                <span class="switch_text">{{isPwdShow?'abc':'...'}}</span>
+              </div>
+            </section>
+            <!-- 验证码 -->
+            <section class="login_captcha">
+              <!-- 验证码 -->
+              <input
+                type="text"
+                maxlength="11"
+                placeholder="验证码"
+                v-model="captcha"
+                name="captcha"
+                v-validate="'required'"
+              />
+              <span style="color:red" class="help is-danger">{{ errors.first('captcha') }}</span>
+              <img
+                ref="im"
+                class="get_verification"
+                src="http://localhost:5000/captcha"
+                alt="captcha"
+                
+              />
             </section>
           </div>
-
           <!-- 下方按钮 -->
-          <button class="login_submit">登录</button>
+          <button class="login_submit"  @click.prevent="login">登录/注册</button>
+          <p class="tips">未注册手机号验证成功后自动创建账户</p>
         </form>
       </div>
 
@@ -61,125 +77,73 @@
 </template>
 <script>
 // 引入接口
-// import { reqSendCode, reqSmsLogin, reqPwdLogin } from '../../api'
-// import { MessageBox, Toast } from 'mint-ui'
+import { reqPwdLogin } from "../../api";
+import { MessageBox, Toast } from "mint-ui";
 export default {
   data() {
     return {
-      loginWay: true, // 默认是true,手机号码的方式是显示的,false--用户名
-      // phone: '', // 用来存储手机号
-      // computedTime: 0, // 用来倒计时的
-      isPwdShow: false // 用来切换密码是否明文
-      // code: '', // 短信验证码
-      // name: '', // 用户名
-      // pwd: '', // 密码
-      // captcha: '' // 图形验证码
+      isPwdShow: false, // 用来切换密码是否明文
+      name: "1855387618", // 用户名
+      pwd: "123456", // 密码
+      captcha: "" // 图形验证码
+
     };
   },
-  // computed: {
-  //   isRightPhone() {
-  //     return /[1]\d{10}/.test(this.phone)
-  //   }
-  // },
+  computed: {
+    // 正则检验手机号是否正确
+    isRightPhone() {
+      return /[1]\d{10}/.test(this.name);
+    }
+  },
+  methods: {
+    // 登录操作
+    async login() {
+      // 获取用户名，密码，验证码
+      const { name, pwd, captcha } = this;
+      // 密码登录
+      let names = ["name", "pwd",captcha];
+      console.log(names)
+      // 表单验证
+      const success = this.$validator.validateAll(names);
+      // 判断验证是否通过
+      console.log(success)  //succe
+      if (success) {
+        // 验证成功，通过
+        // 发送请求，接收数据
+        let result = await reqPwdLogin({ name, pwd });
+        console.log(result)
+        // 判断是否登录成功 1失败，0成功
+        // 登录失败，刷新验证码
+        // if (result.code !== "0") {
+        //   // 失败了,重新刷新图形验证码
+        //   this.sendCaptcha();
+        //   this.captcha = "";
+        // }
+ 
+        // 判断是否登录成功
+        if (result.code === "0") {
+          // 保存用户信息
+          const user = result.users[0];
+          // user中有name,img,phone,_id,token
+          this.$store.dispatch("saveUser", user);
 
-  // methods: {
-  //   // 发送验证码
-  //   async sendCode() {
-  //     this.computedTime = 10
-  //     this.timeId = setInterval(() => {
-  //       this.computedTime--
-  //       if (this.computedTime <= 0) {
-  //         this.computedTime = 0
-  //         // 清除定时器
-  //         clearInterval(this.timeId)
-  //       }
-  //     }, 1000)
-  //     // 发送验证码
-  //     const result = await reqSendCode(this.phone)
-  //     if (result.code === 0) {
-  //       // 断言
-  //       Toast('发送成功')
-  //     } else {
-  //       MessageBox.alert('发送失败')
-  //       // 定时器归0
-  //       this.computedTime = 0
-  //       // 清理定时器
-  //       // clearInterval(this.timeId)
-  //     }
-  //   },
-  //   // 登录操作
-  //   async login() {
-  //     //console.log('哈哈')
-  //     // 必须要先判断是哪种登录方式?
-  //     // 必须要表单验证都通过才能进行请求
+          Toast({
+            message: result.message,
+          });
 
-  //     // 手机和验证码---2个------用户名和密码和图形验证码---3个
-  //     const { loginWay, phone, code, name, pwd, captcha } = this
-  //     let names
-  //     if (loginWay) {
-  //       // 手机方式登录
-  //       names = ['phone', 'code']
-  //     } else {
-  //       // 用户名的方式登录
-  //       names = ['name', 'pwd', 'captcha']
-  //     }
-  //     // 多个表单的验证
-  //     const success = this.$validator.validateAll(names)
-  //     // 判断验证是否通过
-  //     if (success) {
-  //       // 发送请求了
-  //       let result
-  //       // 还要判断是哪种登录方式-----发的请求不同
-  //       if (loginWay) {
-  //         // 手机
-  //         result = await reqSmsLogin(phone, code)
-  //         this.computedTime = 0
-  //       } else {
-  //         // 用户名
-  //         result = await reqPwdLogin({ name, pwd, captcha })
-  //         if (result.code === 1) {
-  //           // 失败了,重新刷新图形验证码
-  //           this.sendCaptcha()
-  //           this.captcha = ''
-  //         }
-  //       }
-
-  //       // 无论是手机登录还是用户名登录,此时必须判断是否登录成功
-  //       if (result.code === 0) {
-  //         // 保存用户信息------
-  //         const user = result.data
-  //         // user中有name或者phone,_id,token
-  //         this.$store.dispatch('saveUser', user)
-  //         // 跳转---个人中心---profile组件界面
-  //         this.$router.replace('/profile')
-  //       } else {
-  //         // 登录失败的提示
-  //         MessageBox.alert(result.msg)
-  //       }
-  //     }
-  //   },
-
-  //   // 发送图形验证码
-  //   sendCaptcha() {
-  //     this.$refs.im.src = 'http://localhost:5000/captcha?time=' + Date.now()
-  //   }
-  // },
-
-  // 组件内的路由守卫
-  // beforeRouteEnter(to, from, next) {
-  //   // 该路由守卫中的this是undefined
-  //   // console.log(this)
-  //   next(vm => {
-  //     // 通过 `vm` 访问组件实例
-  //     // console.log(vm)
-  //     if(vm.$store.state.user.user._id){
-  //       next('/profile')
-  //     }else{
-  //       next()
-  //     }
-  //   })
-  //  // next()
-  // }
+          // 跳转---个人中心---profile组件界面
+          this.$router.push("/profile");
+        } else {
+          // 登录失败的提示
+          MessageBox.alert("用户名或密码不正确，请重新输入");
+        }
+      }
+    },
+    // 发送图形验证码
+    sendCaptcha() {
+      this.$refs.im.src = "http://localhost:5000/captcha?time=" + Date.now();
+    }
+  },
 };
 </script>
 <style lang="stylus" rel="stylesheet/stylus">
@@ -200,25 +164,9 @@ export default {
         font-weight bold
         color black
         text-align center
-      .login_header_title
-        padding-top 70px
-        text-align center
-        >a
-          color #333
-          font-size 14px
-          padding-bottom 4px
-          &:first-child
-            margin-right 40px
-          &.on
-            color #ff9a34
-            font-weight 700
-            border-bottom 2px solid #ff9a34
     .login_content
       >form
         >div
-          display none
-          &.on
-            display block
           input
             width 100%
             height 100%
@@ -233,22 +181,10 @@ export default {
           .login_message
             position relative
             margin-top 25px
-            margin-bottom 25px
             height 48px
             font-size 14px
             background #fff
-            .get_verification
-              position absolute
-              top 50%
-              right 10px
-              transform translateY(-50%)
-              border 0
-              color #ccc
-              font-size 14px
-              background transparent
-              &.right
-                color black
-          .login_verification
+          .login_password
             position relative
             margin-top 16px
             height 48px
@@ -274,7 +210,7 @@ export default {
                   float right
                   color #ddd
               &.on
-                background #FF9A34
+                background #02a774
               >.switch_circle
                 // transform translateX(27px)
                 position absolute
@@ -289,13 +225,23 @@ export default {
                 transition transform 0.3s
                 &.right
                   transform translateX(27px)
-          .login_hint
-            margin-top 12px
-            color #999
+          .login_captcha
+            position relative
+            margin-top 16px
+            height 48px
             font-size 14px
-            line-height 20px
-            >a
-              color #FF9A34
+            background #fff
+            .get_verification
+              position absolute
+              top 50%
+              right 10px
+              transform translateY(-50%)
+              border 0
+              color #ccc
+              font-size 14px
+              background transparent
+              &.right
+                color black
         .login_submit
           display block
           width 100%
@@ -308,6 +254,10 @@ export default {
           font-size 16px
           line-height 42px
           border 0
+        .tips
+          font-size 1%
+          margin-top 10px
+          margin-left 18%
     .go_back
       position absolute
       top 5px
