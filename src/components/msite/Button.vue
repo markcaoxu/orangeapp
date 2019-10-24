@@ -1,76 +1,79 @@
 <template>
-  <div id='app'>
+  <div id="app">
     <section class="button-list">
-
       <!-- 演唱会 -->
-      <div class="button-item" @click="goTo('/Shows')" :vocal="buttons.VocalConcert">
-        <img class="button-img" :src=buttons.VocalConcert.img alt="">
+      <div class="button-item" @click="goTo('/show')" >
+        <img class="button-img" :src="buttons.VocalConcert.img" alt />
         <span class="button-text">{{buttons.VocalConcert.name}}</span>
       </div>
 
       <!-- 音乐剧 -->
-      <div class="button-item" @click="goTo('/Shows')" :play="buttons.MusicalPlay">
-        <img class="button-img" :src=buttons.MusicalPlay.img alt="">
+      <div class="button-item" @click="goTo('/show')" >
+        <img class="button-img" :src="buttons.MusicalPlay.img" alt />
         <span class="button-text">{{buttons.MusicalPlay.name}}</span>
       </div>
 
       <!-- 舞台剧 -->
-      <div class="button-item" @click="goTo('/Shows')" :living="buttons.LivingTheatre">
-        <img class="button-img" :src=buttons.LivingTheatre.img alt="">
+      <div class="button-item" @click="goTo('/show')" >
+        <img class="button-img" :src="buttons.LivingTheatre.img" alt />
         <span class="button-text">{{buttons.LivingTheatre.name}}</span>
       </div>
 
       <!-- 儿童剧 -->
-      <div class="button-item" @click="goTo('/Shows')" :children="buttons.DramaForChildren">
-        <img class="button-img" :src=buttons.DramaForChildren.img alt="">
+      <div class="button-item" @click="goTo('/show')">
+        <img class="button-img" :src="buttons.DramaForChildren.img" alt />
         <span class="button-text">{{buttons.DramaForChildren.name}}</span>
       </div>
 
       <!-- 音乐会 -->
-      <div class="button-item" @click="goTo('/Shows')" :music="buttons.Concert">
-        <img class="button-img" :src=buttons.Concert.img alt="">
+      <div class="button-item" @click="goTo('/show')">
+        <img class="button-img" :src="buttons.Concert.img" alt />
         <span class="button-text">{{buttons.Concert.name}}</span>
       </div>
-
     </section>
   </div>
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       buttons: {
-				"VocalConcert":{
-				"name":"演唱会",
-				"img":"https://image.juooo.com/group1/M00/03/26/rAoKNVzId-KAX9CzAAAG-I4FmRM978.png"
-			},
-			"MusicalPlay":{
-				"name":"音乐剧",
-				"img":"https://image.juooo.com/group1/M00/03/26/rAoKNVzIeBeAScMUAAAEhJWVzNA919.png"
-			},
-			"LivingTheatre":{
-				"name":"舞台剧",
-				"img":"https://image.juooo.com/group1/M00/03/26/rAoKNVzIeCKAMJQ7AAAGkw6V6Ms752.png"
-			},
-			"DramaForChildren":{
-				"name":"儿童剧",
-				"img":"https://image.juooo.com/group1/M00/02/7D/rAoKmVzIeCyAB0jKAAAFxM4aS44306.png"
-			},
-			"Concert":{
-				"name":"音乐会",
-				"img":"https://image.juooo.com/group1/M00/03/26/rAoKNVzIeDSATtBuAAAFFfAO9uw344.png"
-			}
-			}
-    }
+        VocalConcert: {
+          name: "演唱会",
+          img:
+            "https://image.juooo.com/group1/M00/03/26/rAoKNVzId-KAX9CzAAAG-I4FmRM978.png"
+        },
+        MusicalPlay: {
+          name: "音乐剧",
+          img:
+            "https://image.juooo.com/group1/M00/03/26/rAoKNVzIeBeAScMUAAAEhJWVzNA919.png"
+        },
+        LivingTheatre: {
+          name: "舞台剧",
+          img:
+            "https://image.juooo.com/group1/M00/03/26/rAoKNVzIeCKAMJQ7AAAGkw6V6Ms752.png"
+        },
+        DramaForChildren: {
+          name: "儿童剧",
+          img:
+            "https://image.juooo.com/group1/M00/02/7D/rAoKmVzIeCyAB0jKAAAFxM4aS44306.png"
+        },
+        Concert: {
+          name: "音乐会",
+          img:
+            "https://image.juooo.com/group1/M00/03/26/rAoKNVzIeDSATtBuAAAFFfAO9uw344.png"
+        }
+      }
+    };
   },
   methods: {
     goTo (path) {
-      if (this.$router.path !== path) {
+      if (this.$route.path !== path) {
         this.$router.push(path)
       }
     }
   }
-}
+};
 </script>
 <style lang='stylus'>
 .button-list
