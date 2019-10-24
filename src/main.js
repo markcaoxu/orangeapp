@@ -8,6 +8,8 @@ import router from './router/index.js'
 import store from './store/index.js'
 
 
+// 引入vee-validtejs文件
+import './vee-validate.js'
 // 引入mint-ui
 import MintUI from 'mint-ui'
 // 本地依赖包里mint-ui样式    也可以配置babel
@@ -18,6 +20,7 @@ import "../public/css/reset.css"
 // import BScroll from 'better-scroll'
 // // 声明使用
 // Vue.use(BScroll)
+
 
 // 声明使用
 Vue.use(MintUI)
@@ -51,7 +54,6 @@ Vue.component(TabContainer.name, TabContainer);
 Vue.component(TabContainerItem.name, TabContainerItem);
 Vue.component(Cell.name, Cell);
 
-// 表单验证 vee-validate的引入
 
 
 

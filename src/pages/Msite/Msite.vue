@@ -26,7 +26,7 @@
         <HotPerformance :HotPerformance="HotPerformance"/>
       </div>
     </div>
-		<div class="blank"></div>
+		<div class="blank">加载更多</div>
   </div>
 </template>
 <script>
@@ -44,8 +44,6 @@ import Purchase from "../../components/msite/Purchase"
 import HotPerformance from "../../components/msite/HotPerformance"
 // 引入BScroll组件
 import BScroll from 'better-scroll'
-// 声明使用
-// Vue.use(BScroll)
 //引入reqMessage方法，用来获取数据
 import { reqMessage } from '../../api/index.js'
 export default {
@@ -103,11 +101,11 @@ export default {
   height 100%
   .msite
     width 100%
-    position relative
+    position fixed
     .msite-header
       width 100%
       height 30px
-      position absolute
+      position fixed
       top 0
       left 0
       z-index 5
@@ -128,4 +126,10 @@ export default {
 			width 100%
       height 250px
 			background-color blue
+	.blank
+		width 100%
+		height 60px
+		text-align center
+		line-height 60px
+		font-size 30px
 </style>

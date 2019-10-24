@@ -1,46 +1,42 @@
 <template>
-  <div class="wrapper01" ref="wrapper01">
-    <div class="cinema">
-      <!-- 头部 -->
-      <div class="cinema-header">剧院</div>
-      <!-- 主体 -->
-      <ul class="cinema-list">
-        <!-- 大项目 -->
-        <li class="cinema-item" v-for="(cinema,index) in cinemas" :key="index">
-          <!-- 剧院头部名称 -->
-          <div class="list-header">
-            <div class="left-img">
-              <img
-                :src="cinema.cinemaImg"
-                alt
-              />
-            </div>
-            <div class="right-text">
-              <p>{{cinema.cinemaName}}</p>
-              <p>{{cinema.performNum}}场在售演出</p>
-              <span class="iconfont icon-gengduo"></span>
-            </div>
-          </div>
-          <!-- 剧场影片列表 -->
-          <div class="list-content">
-            <!-- 剧 -->
-            <div class="list-item" v-for="(item,index) in cinema.performs" :key="index">
-              <!-- 剧-时间 -->
-              <div class="top-time">
-                <span>{{item.time}}</span>
-                <span></span>
+  <div class="cinema-big">
+    <!-- 头部 -->
+    <div class="cinema-header">剧院</div>
+    <div class="wrapper01" ref="wrapper01">
+      <div class="cinema">
+        <!-- 主体 -->
+        <ul class="cinema-list">
+          <!-- 大项目 -->
+          <li class="cinema-item" v-for="(cinema,index) in cinemas" :key="index">
+            <!-- 剧院头部名称 -->
+            <div class="list-header">
+              <div class="left-img">
+                <img :src="cinema.cinemaImg" alt />
               </div>
-              <!-- 剧-图片 -->
-              <div class="bottom-img" @click="goDetail(item.title)">
-                <img
-                  :src="item.imgUrl"
-                  alt
-                />
+              <div class="right-text">
+                <p>{{cinema.cinemaName}}</p>
+                <p>{{cinema.performNum}}场在售演出</p>
+                <span class="iconfont icon-gengduo"></span>
               </div>
             </div>
-          </div>
-        </li>
-      </ul>
+            <!-- 剧场影片列表 -->
+            <div class="list-content">
+              <!-- 剧 -->
+              <div class="list-item" v-for="(item,index) in cinema.performs" :key="index">
+                <!-- 剧-时间 -->
+                <div class="top-time">
+                  <span>{{item.time}}</span>
+                  <span></span>
+                </div>
+                <!-- 剧-图片 -->
+                <div class="bottom-img" @click="goDetail(item.title)">
+                  <img :src="item.imgUrl" alt />
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -49,13 +45,13 @@
 // 引入better-scroll
 import Bscroll from "better-scroll";
 // 引入接口
-import { reqCinemasInfo,reqDetailInfo } from "../../api/index.js";
+import { reqCinemasInfo, reqDetailInfo } from "../../api/index.js";
 export default {
-  data () {
+  data() {
     return {
-      cinemas:[],
-      detail:{}
-    }
+      cinemas: [],
+      detail: {}
+    };
   },
   async mounted() {
     // 滑动配置
@@ -76,47 +72,56 @@ export default {
     // 发送请求，获取场馆信息
     const result = await reqCinemasInfo();
     // 保存到当前Vue实例对象的cinemas数组
-    this.cinemas = result.cinemasInfo.Cinemas
+    this.cinemas = result.cinemasInfo.Cinemas;
   },
   methods: {
-    async goDetail(title){
+    async goDetail(title) {
       // 获取title
       // console.log(title);
       // 发送请求，获取商品列表
-      const result = await reqDetailInfo()
+      const result = await reqDetailInfo();
       // console.log(result.detail);
       // 遍历匹配title
-      result.detail.forEach((item)=>{
+      result.detail.forEach(item => {
         // console.log(item);
         // 判断
-        if(title===item.title){
+        if (title === item.title) {
           // 匹配成功，把这个item（匹配的商品对象）存到Vuex中
-          this.$store.dispatch('saveDetail',item)
+          this.$store.dispatch("saveDetail", item);
           // 跳转到商品详情页
 
           // console.log(this)
-          this.$router.push('/detail')
+          this.$router.push("/detail");
         }
-      })
+      });
     }
   }
 };
 </script>
 
 <style lang='stylus' rel='stylesheet/stylus' >
+.cinema-big
+  width 100%
+  height 100%
+// 剧场大头样式
+.cinema-header
+  width 100%
+  height 43px
+  border-bottom 1px solid #cccccc
+  line-height 43px
+  text-align center
+  position fixed
+  left 0
+  top 0
+  background-color #fff
+  z-index 1000
 .wrapper01
   width 100%
   height 100%
   .cinema
     width 100%
-    padding-bottom 60px
-    // 剧场大头样式
-    .cinema-header
-      width 100%
-      height 43px
-      border-bottom 1px solid #cccccc
-      line-height 43px
-      text-align center
+    padding-bottom 80px
+    padding-top 45px
     // 剧场主内容
     .cinema-list
       width 92%

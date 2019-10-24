@@ -15,10 +15,18 @@ const BASE = '/api'
 
 // -------------------------------------请求模板---------------------
 // 请求用户名和密码登录
-// 暴露请求
-export const reqPwdLogin = ({ username, password }) => ajax({
-  method: 'POST', // 请求类型
-  url: BASE + `/login_pwd?username=${username}&password=${password}` // 请求地址，携带参数
+export const reqPwdLogin = ({name,pwd})=>ajax({
+  method:'POST',
+  url: BASE + `/login_pwd?username=${name}&password=${pwd}`
+})
+
+// 自动登录接口，要携带token
+export const reqAutoLogin = () => ajax({
+  method: 'GET',
+  url: BASE + `/autologin`,
+  headers: {
+    needToken:true
+  }
 })
 // -------------------------------------请求模板---------------------
 
@@ -71,4 +79,10 @@ export const reqAutoGetDetail=(name)=>ajax({
 export const reqShows = ()=>ajax({
   method:'GET',
   url: BASE+'/shows'
+})
+
+// 请求票劵信息
+export const reqTicketInfo = ()=>ajax({
+  method:'GET',
+  url:BASE+'/get_ticket_info'
 })
