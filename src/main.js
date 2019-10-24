@@ -7,7 +7,9 @@ import router from './router/index.js'
 // 引入store
 import store from './store/index.js'
 
+import { Tab, Tabs } from 'vant';
 
+Vue.use(Tab).use(Tabs);
 
 
 
@@ -26,9 +28,6 @@ import {
 	Search,
 	Swipe,
 	SwipeItem,
-	TabContainer, 
-	TabContainerItem,
-	Cell,
 	Field
 } from 'mint-ui'
 
@@ -45,14 +44,8 @@ Vue.component(Search.name, Search);
 Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem);
 Vue.component(Field.name, Field)
-// 声明使用
-Vue.component(TabContainer.name, TabContainer);
-Vue.component(TabContainerItem.name, TabContainerItem);
-Vue.component(Cell.name, Cell);
 
 // 表单验证 vee-validate的引入
-
-
 
 // 设置vue配置信息
 Vue.config.productionTip = false

@@ -1,300 +1,135 @@
 <template>
-  <div class="shows_container">
-    <div class="shows_header">
-      <span class="iconfont icon-arrow-left"></span>
+  <div class="showsContainer">
+    <div class="showsHeader">
+      <span class="iconfont icon-arrow-left" @click="$router.back()"></span>
       <p class="header_center">演出</p>
       <span class="iconfont icon-gengduo"></span>
     </div>
-    <div class="shows_center">
-      <div class="center_left" ref="center_left">
-        <div class="nav">
-          <mt-button size="small" @click.native.prevent="active = 'tab-container1'">全部</mt-button>
-          <mt-button size="small" @click.native.prevent="active = 'tab-container2'">演唱会</mt-button>
-          <mt-button size="small" @click.native.prevent="active = 'tab-container3'">音乐会</mt-button>
-          <mt-button size="small" @click.native.prevent="active = 'tab-container4'">话剧歌剧</mt-button>
-          <mt-button size="small" @click.native.prevent="active = 'tab-container5'">儿童亲子</mt-button>
-          <mt-button size="small" @click.native.prevent="active = 'tab-container6'">音乐剧</mt-button>
-          <mt-button size="small" @click.native.prevent="active = 'tab-container7'">戏曲综艺</mt-button>
-          <mt-button size="small" @click.native.prevent="active = 'tab-container8'">展览</mt-button>
-          <mt-button size="small" @click.native.prevent="active = 'tab-container9'">芭蕾舞蹈</mt-button>
-        </div>
+    <div class="showsCenter">
+      <div class="centerLeft">
+        <van-tabs v-model="active" class="nav">
+          <van-tab title="全国"></van-tab>
+          <van-tab title="演唱会"></van-tab>
+          <van-tab title="音乐剧"></van-tab>
+          <van-tab title="话剧歌剧"></van-tab>
+          <van-tab title="儿童亲子"></van-tab>
+          <van-tab title="音乐剧"></van-tab>
+          <van-tab title="戏曲综艺"></van-tab>
+          <van-tab title="展览"></van-tab>
+          <van-tab title="舞蹈芭蕾"></van-tab>
+        </van-tabs>
       </div>
-      <div class="center_right">
+      <div class="centerRight">
         <span class="rightOne">|</span>
         <span>全国</span>
         <span class="iconfont icon-dingwei"></span>
       </div>
-      <div class="shows_footer">
-        <!-- <ShowsList/> -->
-        <div class="page-tab-container">
-          <mt-tab-container class="page-tabbar-tab-container" v-model="active">
-            <mt-tab-container-item id="tab-container1">
-              <!-- cell组件 -->
-              <mt-cell v-for="(show,index) in shows" :key="index">
-                <img :src="show.coverUrl" alt />
-                <div class="list_right">
-                  <span class="right_time">{{show.performanceTime}}</span>
-                  <span class="right_day">{{show.performanceDate}}</span>
-                  <h3>{{show.title}}</h3>
-                  <p>{{show.performancePlace}}</p>
-                  <strong class="money">￥{{show.priceMin}}</strong>
-                  <span class="money_right">起</span>
-                </div>
-              </mt-cell>
-            </mt-tab-container-item>
-            <mt-tab-container-item id="tab-container2">
-              <!-- cell组件 -->
-              <mt-cell v-for="(show,index) in shows" :key="index">
-                <img :src="show.coverUrl" alt />
-                <div class="list_right">
-                  <span>{{show.performanceTime}}</span>
-                  <span>{{show.performanceDate}}</span>
-                  <h3>{{show.title}}</h3>
-                  <p>{{show.performancePlace}}</p>
-                  <strong class="howMoney">￥{{show.priceMin}}</strong>
-                  <span>起</span>
-                </div>
-              </mt-cell>
-            </mt-tab-container-item>
-            <mt-tab-container-item id="tab-container3">
-              <!-- cell组件 -->
-              <mt-cell v-for="(show,index) in shows" :key="index">
-                <img :src="show.coverUrl" alt />
-                <div class="list_right">
-                  <span>{{show.performanceTime}}</span>
-                  <span>{{show.performanceDate}}</span>
-                  <h3>{{show.title}}</h3>
-                  <p>{{show.performancePlace}}</p>
-                  <strong class="howMoney">￥{{show.priceMin}}</strong>
-                  <span>起</span>
-                </div>
-              </mt-cell>
-            </mt-tab-container-item>
-            <mt-tab-container-item id="tab-container4">
-              <!-- cell组件 -->
-              <mt-cell v-for="(show,index) in shows" :key="index">
-                <img :src="show.coverUrl" alt />
-                <div class="list_right">
-                  <span>{{show.performanceTime}}</span>
-                  <span>{{show.performanceDate}}</span>
-                  <h3>{{show.title}}</h3>
-                  <p>{{show.performancePlace}}</p>
-                  <strong class="howMoney">￥{{show.priceMin}}</strong>
-                  <span>起</span>
-                </div>
-              </mt-cell>
-            </mt-tab-container-item>
-            <mt-tab-container-item id="tab-container5">
-              <!-- cell组件 -->
-              <mt-cell v-for="(show,index) in shows" :key="index">
-                <img :src="show.coverUrl" alt />
-                <div class="list_right">
-                  <span>{{show.performanceTime}}</span>
-                  <span>{{show.performanceDate}}</span>
-                  <h3>{{show.title}}</h3>
-                  <p>{{show.performancePlace}}</p>
-                  <strong class="howMoney">￥{{show.priceMin}}</strong>
-                  <span>起</span>
-                </div>
-              </mt-cell>
-            </mt-tab-container-item>
-            <mt-tab-container-item id="tab-container6">
-              <!-- cell组件 -->
-              <mt-cell v-for="(show,index) in shows" :key="index">
-                <img :src="show.coverUrl" alt />
-                <div class="list_right">
-                  <span>{{show.performanceTime}}</span>
-                  <span>{{show.performanceDate}}</span>
-                  <h3>{{show.title}}</h3>
-                  <p>{{show.performancePlace}}</p>
-                  <strong class="howMoney">￥{{show.priceMin}}</strong>
-                  <span>起</span>
-                </div>
-              </mt-cell>
-            </mt-tab-container-item>
-            <mt-tab-container-item id="tab-container7">
-              <!-- cell组件 -->
-              <mt-cell v-for="(show,index) in shows" :key="index">
-                <img :src="show.coverUrl" alt />
-                <div class="list_right">
-                  <span>{{show.performanceTime}}</span>
-                  <span>{{show.performanceDate}}</span>
-                  <h3>{{show.title}}</h3>
-                  <p>{{show.performancePlace}}</p>
-                  <strong class="howMoney">￥{{show.priceMin}}</strong>
-                  <span>起</span>
-                </div>
-              </mt-cell>
-            </mt-tab-container-item>
-            <mt-tab-container-item id="tab-container8">
-              <!-- cell组件 -->
-              <mt-cell v-for="(show,index) in shows" :key="index">
-                <img :src="show.coverUrl" alt />
-                <div class="list_right">
-                  <span>{{show.performanceTime}}</span>
-                  <span>{{show.performanceDate}}</span>
-                  <h3>{{show.title}}</h3>
-                  <p>{{show.performancePlace}}</p>
-                  <strong class="howMoney">￥{{show.priceMin}}</strong>
-                  <span>起</span>
-                </div>
-              </mt-cell>
-            </mt-tab-container-item>
-            <mt-tab-container-item id="tab-container9">
-              <!-- cell组件 -->
-              <mt-cell v-for="(show,index) in shows" :key="index">
-                <img :src="show.coverUrl" alt />
-                <div class="list_right">
-                  <span>{{show.performanceTime}}</span>
-                  <span>{{show.performanceDate}}</span>
-                  <h3>{{show.title}}</h3>
-                  <p>{{show.performancePlace}}</p>
-                  <strong class="howMoney">￥{{show.priceMin}}</strong>
-                  <span>起</span>
-                </div>
-              </mt-cell>
-            </mt-tab-container-item>
-          </mt-tab-container>
-        </div>
-      </div>
-      <!-- <van-popup v-model="show">
-          <h3>城市</h3>
-          <ul>
-            <li v-for="(city,index) in cities" :key="index">{{city}}</li>
-          </ul>
-        </van-popup> -->
     </div>
+    <ShowsList/>
   </div>
 </template>
 <script>
-// 引入BScroll
-import Bscroll from "better-scroll";
-// 引入vant
-//import { Popup } from 'vant';
-// 引入reqShows
-import { reqShows } from "../../api/index.js";
+// 引入组件
+import ShowsList from "./ShowsList/ShowsList";
 export default {
+  components: {
+    ShowsList
+  },
   data() {
     return {
-      shows: [], // 遍历的数据
-      cities:[],// 遍历的数据
-      active: "tab-container1",
-      show:false // 弹出层是否展示
+      active: 0, // 默认值为0
+      scrollY: 0 // 滑动的距离值
     };
-  },
-  // 加载数据
-  async mounted() {
-    let result = await reqShows();
-    this.shows = result.showsDetail;
-    this.cities = result.showsCity
-
-    //横向滑动
-    this.$nextTick(() => {
-      if (!this.scroll) {
-        this.scroll = new Bscroll(this.$refs.center_left, {
-          startX: 0,
-          click: true,
-          scrollX: true,
-          scrollY: false
-        });
-      } else {
-        this.scroll.refresh();
-      }
-    });
-  },
-  // methods:{
-  //   showPopup(){
-  //     this.show = true
-  //   }
-  // }
+  }
 };
 </script>
 <style lang='stylus' rel='stylesheet/stylus'>
-.shows_header
-  height 40px
-  display flex
-  border-bottom 1px solid #DBDBDD
-  .icon-arrow-left
-    height 36px
-    width 16%
-    font-size 18px
-    padding 10px 8px
-    color #272727
-  .header_center
+.showsContainer
+  width 100%
+  height 100%
+  position relative
+  .showsHeader
+    width 100%
     height 40px
-    width 60%
-    font-size 18px
-    text-align center
-    line-height 40px
-    color #272727
-  .icon-gengduo
-    width 20%
-    text-align center
-    line-height 40px
-    font-weight 600
-    margin 2px 0
-.shows_center
-  width 100%
-  height 50px
-  .center_left
-    width 80%
-    height 50px
-    overflow hidden
-    float left
-    // background-color pink
-    .nav
-      width 700px
-      display flex
-      padding 10px 0
-      .mint-button
-        background-color white
-        border 1px solid white
-        margin 0 3px
-  .center_right
-    float right
-    width 20%
-    padding-top 18px
-    span
-      color #666666
-    .rightOne
-      margin-right 8px
-      color #F0F0F0
-.shows_footer
-  width 100%
-  padding 53px 0
-  .page-tab-container
-    width 94%
-    margin 0 3%
-    .mint-tab-container-item
-      width 100%
-      .mint-cell
-        height 170px
-        img
-          width 28%
-          height 80%
-          padding 7% 0
-        .list_right
-          width 70%
-          padding 30px 0
-          margin-left 10px
-          .right_time
-            color black
-            font-weight 600
-            padding-right 10px
-          .right_day
-            font-size 12px
-          h3
-            color black
-            font-weight 700
-            padding-top 10px
-            height 45%
-            line-height 20px
-          p
-            font-size 12px
-            padding-bottom 10px
-          .money
-            color #ff6743
-          .money_right
-            font-size 12px
-            padding-left 6px
+    display flex
+    border-bottom 1px solid #DBDBDD
+    position fixed
+    .icon-arrow-left
+      height 36px
+      width 16%
+      font-size 18px
+      padding 10px 8px
+      color #272727
+    .header_center
+      height 40px
+      width 60%
+      font-size 18px
+      text-align center
+      line-height 40px
+      color #272727
+    .icon-gengduo
+      width 20%
+      text-align center
+      line-height 40px
+      font-weight 600
+      margin 2px 0
+  .showsCenter
+    width 100%
+    position fixed
+    padding-top 41px
+    .centerLeft
+      width 80%
+      float left
+      overflow hidden
+      .nav
+        width 300px
+    .centerRight
+      float right
+      width 20%
+      padding-top 14px
+      float right
+      span
+        color #666666
+      .rightOne
+        margin-right 8px
+        color #F0F0F0
+  .showsFooter
+    width 100%
+    height 85%
+    padding-top 80px
+    .contentList
+      width 95%
+      margin-left 16px
+      overflow visible
+      ul
+        width 100%
+        li
+          width 100%
+          height 200px
+          display flex
+          img
+            width 32%
+            height 75%
+            padding-top 24px
+            padding-left 0
+          .listRight
+            margin-left 12px
+            padding-top 30px
+            .date
+              font-weight 600
+            .time
+              font-size 12px
+              padding-left 8px
+            h3
+              font-weight 700
+              margin 20px 0
+              line-height 100%
+            p
+              font-size 12px
+              padding-bottom 10px
+            .money
+              color #ff6743
+            .more
+              font-size 12px
+              padding-left 5px
 </style>
