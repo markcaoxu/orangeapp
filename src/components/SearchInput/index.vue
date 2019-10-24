@@ -32,32 +32,33 @@
 <script>
 /* eslint-disable */
 // 引入商品列表信息
-import { reqSearch } from "../../api/index.js";
+import { reqDetailInfo } from "../../api/index.js";
 export default {
   name: "SearchInput",
   props: [""],
   data() {
     return {
       inputText: "", //输入框输入的内容
+      newItemList:{}
     };
   },
-
-  components: {},
-
-  computed: {},
-
-  beforeMount() {},
-
-  mounted() {},
-
   methods: {
       //输入完成 ，center键确定
     async centerText() {
-      // 发送请求获取数据
-      let inputText = await reqSearch();
-      //console.log(inputText)
       //输入完成跳转result路由
-      this.$router.push("/result");
+      this.$router.push("/result?name="+this.inputText)
+      // const infoes = await reqDetailInfo();
+      // //遍历这个数组
+      // infoes.detail.forEach((item)=>{
+      //   if (
+      //     item.name.includes(this.inputText)||
+      //     item.title.includes(this.inputText)
+      //   ) {
+      //     //成功
+      //     this.newItemList = item
+      //     console.log(this.newItemList)
+      //   }
+      // })
     },
     //点击清除图标，清空inputText内容
     deleteTExt() {
