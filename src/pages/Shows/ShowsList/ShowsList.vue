@@ -1,8 +1,8 @@
 <template>
-  <div class="showsFooter">
-    <div class="contentList" ref="contentList">
+  <div class="showsFooter" ref="contentList">
+    <div class="contentList" >
       <ul>
-        <li v-for="(show,index) in shows" :key="index">
+        <li v-for="(show,index) in showss" :key="index" @click="$router.push('/detail')">
           <img :src="show.coverUrl" alt />
           <div class="listRight">
             <span class="date">{{show.performanceTime}}</span>
@@ -25,14 +25,14 @@ import BScroll from "better-scroll";
 export default {
   data(){
     return {
-      shows: [], // 遍历的数据
+      showss: [], // 遍历的数据
     }
   },
   name: "ShowsList",
   async mounted(){
     // 遍历的数据
     let result = await reqShows();
-    this.shows = result.showsDetail;
+    this.showss = result.showsDetail;
 
     // 滑动
     this.$nextTick(()=>{

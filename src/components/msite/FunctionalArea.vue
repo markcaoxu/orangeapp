@@ -134,7 +134,7 @@ export default {
 				background-color white
 				margin 5px
 			.fuction-title
-				width 100%
+				width 65%
 				height 30px
 				font-size 16px
 				font-weight 700

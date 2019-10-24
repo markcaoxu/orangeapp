@@ -55,11 +55,11 @@ export default {
 		.Location-text
 			border .5px solid white
 			width 15%
-			height 75%
+			height 79%
 			border-radius 20px
 			line-height 145%
 			position absolute
-			top 20%
+			top 15%
 			left 3%
 			background-color black
 			.Location-img

@@ -1,7 +1,7 @@
 <template>
   <div class="showsContainer">
     <div class="showsHeader">
-      <span class="iconfont icon-arrow-left" @click="$router.back()"></span>
+      <span class="iconfont icon-arrow-left" @click="handleGoBack"></span>
       <p class="header_center">演出</p>
       <span class="iconfont icon-gengduo"></span>
     </div>
@@ -25,7 +25,7 @@
         <span class="iconfont icon-dingwei"></span>
       </div>
     </div>
-    <ShowsList/>
+    <ShowsList />
   </div>
 </template>
 <script>
@@ -38,8 +38,13 @@ export default {
   data() {
     return {
       active: 0, // 默认值为0
-      scrollY: 0 // 滑动的距离值
+      scrollY: 0, // 滑动的距离值
     };
+  },
+  methods: {
+    handleGoBack() {
+      this.$router.back();
+    }
   }
 };
 </script>
@@ -54,6 +59,8 @@ export default {
     display flex
     border-bottom 1px solid #DBDBDD
     position fixed
+    z-index 99
+    background-color white
     .icon-arrow-left
       height 36px
       width 16%
@@ -76,17 +83,20 @@ export default {
   .showsCenter
     width 100%
     position fixed
+    z-index 9
     padding-top 41px
     .centerLeft
       width 80%
       float left
       overflow hidden
+      background-color white
       .nav
         width 300px
     .centerRight
+      background-color white
       float right
       width 20%
-      padding-top 14px
+      padding 14px 0
       float right
       span
         color #666666
@@ -96,25 +106,24 @@ export default {
   .showsFooter
     width 100%
     height 85%
-    padding-top 80px
+    padding-top 90px
     .contentList
       width 95%
       margin-left 16px
       overflow visible
+      padding-top 80px
       ul
-        width 100%
+        width 96%
         li
           width 100%
-          height 200px
+          height 196px
           display flex
           img
             width 32%
             height 75%
-            padding-top 24px
             padding-left 0
           .listRight
             margin-left 12px
-            padding-top 30px
             .date
               font-weight 600
             .time
