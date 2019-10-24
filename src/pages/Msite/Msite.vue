@@ -84,7 +84,7 @@ export default {
 		this.functionalAreas = result.msiteDetail.FunctionalArea
 		// console.log(this.functionalArea)
 		this.HotPerformance = result.msiteDetail.HotPerformance
-    console.log(this.HotPerformance)
+    // console.log(this.HotPerformance)
 
   },
   components: {
