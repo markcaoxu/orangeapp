@@ -3,7 +3,7 @@
   <div class="ticket">
     <!-- 头部 -->
     <div class="ticket-header">
-      <span class="iconfont icon-arrow-left"></span>
+      <span class="iconfont icon-arrow-left" @click="$router.back()"></span>
       <span>票夹</span>
       <span class="iconfont icon-gengduo"></span>
     </div>

@@ -110,12 +110,6 @@ koa
 
 // 监听端口,启动服务器
 koa.listen('5000', () => {
-<<<<<<< HEAD
-  console.log('后台服务器已启动')
-  console.log('服务器的地址为:http://localhost:5000')
-})
-=======
   console.log('服务器启动了')
   console.log('服务器的地址为:http://localhost:5000')
 })
->>>>>>> b00919fe2e6e791df520364088ac24b11af5ccea
