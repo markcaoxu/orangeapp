@@ -53,7 +53,7 @@ export default [
   },
   // 详情列表 Show
   {
-    path:'/shows',
+    path:'/show',
     component: Shows
   },
   // 搜索

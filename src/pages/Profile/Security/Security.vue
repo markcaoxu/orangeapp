@@ -24,7 +24,7 @@
       <mt-field label="密码" placeholder="修改密码" type="password" v-model="password"></mt-field>
     </div>
     <div class="secExit" @click="secExit">
-      <p>退出登录</p>
+      <p>退出/登录</p>
     </div>
   </div>
 </template>
@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     secExit() {
-      MessageBox.confirm("确定要退出吗?").then(() => {
+      MessageBox.confirm("确定要执行此操作吗?").then(() => {
         this.$router.push("/login");
       });
     }
