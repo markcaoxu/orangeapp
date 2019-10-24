@@ -20,14 +20,17 @@ let city = require('./datas/city.json')
 
 
 // 登录接口
-koaRouter.get('/login_pwd', (ctx) => {
+koaRouter.post('/login_pwd',(ctx)=>{
   // 匹配账号密码
-  login.users.forEach((item) => {
-    ctx.body = {
-      message: '登录成功',
-      code: "0",
-      // 数据
-      login: item
+  login.users.forEach((item)=>{
+    if (item.username === ctx.query.username && item.password === ctx.query.password) {
+      const users = login.users
+      ctx.body={
+        message:'登录成功',
+        code:"0",
+        // 数据
+        users
+      }
     }
   })
 })

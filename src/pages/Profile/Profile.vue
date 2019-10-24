@@ -10,10 +10,10 @@
         <div class="headcontent">
           <div class="headTop">
             <a href="javascript:;">
-              <img src="./imgs/avatar.png" alt />
-              <div class="profileMessage">
-                <span class="profileName">橙子</span>
-                <span class="peofileId">ID: 11111</span>
+              <img :src="user._id?user.userImage:''" alt @click="$router.push('/security')"/>
+              <div class="profileMessage" @click="$router.push('/login')">
+                <span class="profileName" >{{user._id?user.username:'登录'}}</span>
+                <span class="profileId">{{user._id?user.username:'|注册'}}</span>
               </div>
             </a>
           </div>
@@ -32,7 +32,7 @@
               </li>
               <li class="headList">
                 <a href="javascript:;">
-                  <p class="count">2</p>
+                  <p class="count">0</p>
                   <p class="desc">积分</p>
                 </a>
               </li>
@@ -43,7 +43,7 @@
                 </a>
               </li>
               <li class="headList">
-                <a href="javascript:;">
+                <a href="https://m.juooo.com/shop/vip/buy">
                   <p class="headInfo">立即开通</p>
                   <p class="desc">橙PLUS卡</p>
                 </a>
@@ -66,7 +66,7 @@
             </a>
           </li>
           <li class="setLists">
-            <a href="javascript:;">
+            <a href="javascript:;" @click="$router.push('/ticket')">
               <img src="./imgs/settingImg/ticket.png" alt class="listImg" />
               <p class="listName">我的票夹</p>
             </a>
@@ -109,7 +109,13 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
+  computed: {
+    ...mapState({
+      user: state => state.login.user
+    })
+  },
   methods:{
     
   }
