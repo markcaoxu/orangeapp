@@ -30,6 +30,26 @@ export const reqAutoLogin = () => ajax({
 })
 // -------------------------------------请求模板---------------------
 
+
+//请求商品信息
+
+export const reqSearch = () => ajax({
+  method: 'GET',
+  url: BASE + '/get_detail_info'
+})
+
+// -------------------------------------请求模板---------------------
+// export const reqPwdLogin = ()=>ajax({
+  // get请求
+//   method:'GET', // 请求类型
+//   url: BASE + '/login_pwd/'// 请求地址，携带参数
+// })
+// post请求
+// 	method: 'POST', // 请求类型
+// 	url: BASE + `/login_pwd?username=${username}&password=${password}` // 请求地址，携带参数
+// })
+// -------------------------------------请求模板---------------------
+
 // 请求 msite首页  信息
 export const reqMessage = () => ajax({
 	method: 'GET',
@@ -49,8 +69,20 @@ export const reqDetailInfo = ()=>ajax({
   url: BASE+'/get_detail_info'
 })
 
+// 请求自动获取商品信息的
+export const reqAutoGetDetail=(name)=>ajax({
+  method:'GET',
+  url:BASE+`/autoGetDetail?name=${name}`
+})
+
 // 请求商品列表
 export const reqShows = ()=>ajax({
   method:'GET',
   url: BASE+'/shows'
+})
+
+// 请求票劵信息
+export const reqTicketInfo = ()=>ajax({
+  method:'GET',
+  url:BASE+'/get_ticket_info'
 })

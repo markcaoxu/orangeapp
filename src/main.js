@@ -16,6 +16,10 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 // 引入reset.css文件
 import "../public/css/reset.css"
+// // 引入BScroll组件
+// import BScroll from 'better-scroll'
+// // 声明使用
+// Vue.use(BScroll)
 
 
 // 声明使用
