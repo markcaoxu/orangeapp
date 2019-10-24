@@ -6,8 +6,8 @@
         <mt-tab-container-item>
           <!-- cell组件 -->
           <mt-cell v-for="(movie,index) in newItemList" :key="index">
-            <img :src="movie.coverUrl" alt @click="goTo(index)" />
-            <div class="list_right" @click="goTo(index)">
+            <img :src="movie.coverUrl" alt @click="goDetail(item.title)" />
+            <div class="list_right" @click="goDetail(item.title)">
               <span class="name-text">{{movie.name}}</span>
               <span class="right_time">{{movie.performanceTime}}</span>
               <h3>{{movie.title}}</h3>
@@ -31,10 +31,25 @@ export default {
     }
 	},
 	methods: {
-    goTo (index) {
-        this.$router.push({
-					path:`/detail/${index}`
-				})
+    async goDetail (title) {
+      // 获取title
+      // console.log(title);
+      // 发送请求，获取商品列表
+      const result = await reqShows()
+      // console.log(result.detail);
+      // 遍历匹配title
+      result.detail.forEach((item) => {
+        // console.log(item);
+        // 判断
+        if (title === item.title) {
+          // 匹配成功，把这个item（匹配的商品对象）存到Vuex中
+          this.$store.dispatch('saveDetail', item)
+          // 跳转到商品详情页
+
+          // console.log(this)
+          this.$router.push('/detail')
+        }
+      })
     }
   },
   async mounted () {
@@ -42,7 +57,7 @@ export default {
     let result = await reqShows()
     // 用已有变量接数组
 		this.newItemList = result.showsDetail
-		console.log(this.newItemList)
+		// console.log(this.newItemList)
   }
 }
 </script>

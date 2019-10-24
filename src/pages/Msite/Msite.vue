@@ -22,10 +22,6 @@
           <!-- 引入FunctionalArea组件 -->
           <FunctionalArea :FunctionalAreas="FunctionalAreas" />
         </div>
-        <div class="msite-HotPerformance">
-          <!-- 引入FunctionalArea组件 -->
-          <HotPerformance :HotPerformance="HotPerformance" />
-        </div>
         <div class="msite-ListShows">
           <!-- 引入FunctionalArea组件 -->
           <ListShows :ListShows="ListShows" />
@@ -46,9 +42,7 @@ import SwiperFirst from "../../components/msite/SwiperFirst"
 import Header from "../../components/msite/Header"
 // 引入Header组件
 import Purchase from "../../components/msite/Purchase"
-// 引入HotPerformance组件
-import HotPerformance from "../../components/msite/HotPerformance"
-// 引入HotPerformance组件
+// 引入ListShows组件
 import ListShows from "../../components/msite/ListShows"
 // 引入BScroll组件
 import BScroll from 'better-scroll'
@@ -62,9 +56,7 @@ export default {
       buttons: {},
       FunctionalAreas: {},
       Purchase: {},
-      HotPerformance: [],
-      ListShows: [],
-      VocalConcert: []
+      ListShows: []
     }
   },
   async mounted () {
@@ -89,8 +81,6 @@ export default {
     // console.log(this.buttons)
     this.FunctionalAreas = result.msiteDetail.FunctionalArea
     // console.log(this.FunctionalArea)
-    this.HotPerformance = result.msiteDetail.HotPerformance
-    // console.log(this.HotPerformance)
     this.Purchase = result.msiteDetail.Purchase
     // console.log(this.Purchase)
     this.ListShows = result.msiteDetail.VocalConcert
@@ -103,7 +93,6 @@ export default {
     SwiperFirst,
     Header,
     Purchase,
-    HotPerformance,
     ListShows
   }
 }
@@ -137,7 +126,4 @@ export default {
 			.msite-FunctionalArea
 				width 100%
 				height 220px
-			.msite-HotPerformance
-				width 100%
-				height 250px
 </style>

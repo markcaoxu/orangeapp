@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import { Field, MessageBox } from "mint-ui";
+import { MessageBox } from "mint-ui";
 import { mapState } from 'vuex'
 export default {
   data() {
