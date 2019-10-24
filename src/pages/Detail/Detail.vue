@@ -211,7 +211,7 @@ export default {
     // this.$store.dispatch("autoGetDetail");
     // 发送请求匹配商品详情对象
     // console.log(this.$store.dispatch('autoGetDetail'));
-    this.$store.dispatch('autoGetDetail')
+    this.$store.dispatch("autoGetDetail");
   },
   // 计算属性
   computed: {
@@ -265,36 +265,48 @@ export default {
     },
     // 收揽数据，存储当前影剧到vuex，跳转路由到Ticket组件
     goToTicket() {
-      const chooseResultObj = {
-        date: this.detail.dateOptions[this.thisDateIndex],
-        time: this.detail.timeOption[this.thisTimeIndex],
-        price: this.detail.priceOption[this.thisPriceIndex]
-      };
-      // console.log(chooseResultObj);
-      // 存储到localStorage   使用utils工具中的封装方法
-      GetOrSetLocalStorageChooses.setChooses(chooseResultObj);
-      // 保存当前对象标识
-      this.$store.dispatch("saveDetail", this.detail);
+      if (
+        this.thisDateIndex !== -1 &&
+        this.thisTimeIndex !== -1 &&
+        this.thisPriceIndex !== -1
+      ) {
+        const chooseResultObj = {
+          date: this.detail.dateOptions[this.thisDateIndex],
+          time: this.detail.timeOption[this.thisTimeIndex],
+          price: this.detail.priceOption[this.thisPriceIndex]
+        };
+        // console.log(chooseResultObj);
+        // 存储到localStorage   使用utils工具中的封装方法
+        GetOrSetLocalStorageChooses.setChooses(chooseResultObj);
+        // 保存当前对象标识
+        this.$store.dispatch("saveDetail", this.detail);
 
-      // 提示
-      Toast({
-        message: "正在跳转自动支付...",
-        position: "middle"
-      });
-      // 延时跳转
-      window.timeId = setTimeout(() => {
-        delete window.timeId;
         // 提示
         Toast({
-          message: "支付成功！",
+          message: "正在跳转自动支付...",
           position: "middle"
         });
+        // 延时跳转
         window.timeId = setTimeout(() => {
           delete window.timeId;
-          // 跳转到Ticket组件
-          this.$router.push("/ticket");
-        }, 3000);
-      }, 2000);
+          // 提示
+          Toast({
+            message: "支付成功！",
+            position: "middle"
+          });
+          window.timeId = setTimeout(() => {
+            delete window.timeId;
+            // 跳转到Ticket组件
+            this.$router.push("/ticket");
+          }, 3000);
+        }, 2000);
+      }else{
+        // 提示
+        Toast({
+          message: "您有选项遗漏，请补充选择~",
+          position: "middle"
+        });
+      }
     }
   }
 };
