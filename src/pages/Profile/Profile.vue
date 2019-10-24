@@ -10,7 +10,7 @@
         <div class="headcontent">
           <div class="headTop">
             <a href="javascript:;">
-              <img :src="user._id?user.userImage:''" alt @click="$router.push('/security')"/>
+              <img :src="user._id?user.userImage:'https://image.juooo.com/group1/M00/03/6F/rAoKNV0XF2uABEtSAAANUrP00o0602.png'" alt @click="$router.push('/security')"/>
               <div class="profileMessage" @click="$router.push('/login')">
                 <span class="profileName" >{{user._id?user.username:'登录'}}</span>
                 <span class="profileId">{{user._id?user.username:'|注册'}}</span>

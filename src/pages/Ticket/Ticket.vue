@@ -2,7 +2,7 @@
   <!-- 票夹 -->
   <div class="ticket">
     <!-- 头部 -->
-    <div class="ticket-header">
+    <div class="ticket-header" @click="$router.back()">
       <span class="iconfont icon-arrow-left"></span>
       <span>票夹</span>
       <span class="iconfont icon-gengduo"></span>
