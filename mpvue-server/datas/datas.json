@@ -1,5 +1,6 @@
 {
-  "detail": [{
+  "detail": [
+		{
       "name": "喜剧《戏台》",
       "title": "陈佩斯、杨立新主演喜剧《戏台》-石家庄",
       "coverUrl": "https://image.juooo.com/group1/M00/02/7B/rAoKNVwkpY-AaofYAACqKCpweuU926.jpg",
@@ -130,7 +131,8 @@
       "priceOption": [
         "180", "280", "480", "680", "880"
       ]
-    }, {
+		},
+		{
       "name": "《蒋公的面子》",
       "title": "话剧《蒋公的面子》--石家庄",
       "coverUrl": "https://image.juooo.com/group1/M00/01/E8/rAoKmVxS0JKALcHWAABmP_sHNe4613.jpg",
@@ -173,7 +175,8 @@
       "priceOption": [
         "180", "280", "480", "680", "880"
       ]
-    }, {
+		}, 
+		{
       "name": "《红楼梦》",
       "title": "上海越剧院《红楼梦》-石家庄站",
       "coverUrl": "https://image.juooo.com/group1/M00/03/84/rAoKNV0wNxyAcuwSAABF4oPR-nM733.jpg",

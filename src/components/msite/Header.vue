@@ -3,7 +3,7 @@
     <header class="head">
 
       <!-- 定位部分 -->
-      <div class="Location" @click="goTo('/location')">
+      <div class="Location" @click="goTo('/msite/location')">
         <span class="Location-text">
           <img src="../../pages/Msite/img/nav_icon_search.f194288.png" class="Location-img">
           &nbsp;&nbsp;全国
@@ -19,7 +19,7 @@
       </div>
 
       <!-- 分享部分 -->
-      <div class="share" @click="goTo('/share')">
+      <div class="share" @click="goTo('/msite/share')">
         <img  class="share-img" src="https://image.juooo.com/group1/M00/02/65/rAoKmVyvD7iAHJX4AAADmpmoUeI150.png" alt="">
       </div>
 
@@ -30,9 +30,7 @@
 export default {
   methods: {
     goTo (path) {
-      if (this.$router.path !== path) {
         this.$router.push(path)
-      }
     }
   }
 }

@@ -5,7 +5,7 @@
 
     <div class="footer">
       <!-- 公共组件  携带判断 -->
-      <FooterGuide v-show="$route.meta.isShowFooter" />
+      <FooterGuide v-show="$route.meta.isShowFooter && $route.path!=='/msite/location' && $route.path!=='/msite/share'" />
     </div>
   </div>
 </template>

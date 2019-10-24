@@ -1,32 +1,38 @@
 <template>
-  <div class="warrper">
-    <div class="msite">
-      <div class="msite-header">
-        <!-- 引入header组件 -->
-        <Header />
-      </div>
-      <div class="msite-sectionSwiperOne">
-        <!-- 引入swiper组件 -->
-        <SwiperFirst :arrImg="arrImg" />
-      </div>
-      <div class="msite-button">
-        <!-- 引入button组件 -->
-        <Button :buttons="buttons" />
-      </div>
-      <div class="msite-Purchase">
-        <!-- 引入Purchase组件 -->
-        <Purchase :Purchase="Purchase" />
-      </div>
-      <div class="msite-FunctionalArea" >
-        <!-- 引入FunctionalArea组件 -->
-        <FunctionalArea :functionalAreas="functionalAreas"/>
-      </div>
-			<div class="msite-HotPerformance" >
-        <!-- 引入FunctionalArea组件 -->
-        <HotPerformance :HotPerformance="HotPerformance"/>
+  <div class="orange-msite">
+    <div class="warrper" v-if="$route.path==='/msite'">
+      <div class="msite">
+        <div class="msite-header">
+          <!-- 引入header组件 -->
+          <Header />
+        </div>
+        <div class="msite-sectionSwiperOne">
+          <!-- 引入swiper组件 -->
+          <SwiperFirst :arrImg="arrImg" />
+        </div>
+        <div class="msite-button">
+          <!-- 引入button组件 -->
+          <Button :buttons="buttons" />
+        </div>
+        <div class="msite-Purchase">
+          <!-- 引入Purchase组件 -->
+          <Purchase :Purchase="Purchase" />
+        </div>
+        <div class="msite-FunctionalArea">
+          <!-- 引入FunctionalArea组件 -->
+          <FunctionalArea :FunctionalAreas="FunctionalAreas" />
+        </div>
+        <div class="msite-HotPerformance">
+          <!-- 引入FunctionalArea组件 -->
+          <HotPerformance :HotPerformance="HotPerformance" />
+        </div>
+        <div class="msite-ListShows">
+          <!-- 引入FunctionalArea组件 -->
+          <ListShows :ListShows="ListShows" />
+        </div>
       </div>
     </div>
-		<div class="blank">加载更多</div>
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -42,6 +48,8 @@ import Header from "../../components/msite/Header"
 import Purchase from "../../components/msite/Purchase"
 // 引入HotPerformance组件
 import HotPerformance from "../../components/msite/HotPerformance"
+// 引入HotPerformance组件
+import ListShows from "../../components/msite/ListShows"
 // 引入BScroll组件
 import BScroll from 'better-scroll'
 //引入reqMessage方法，用来获取数据
@@ -52,9 +60,11 @@ export default {
       // 空的数组，准备接值
       arrImg: [],
       buttons: {},
-      functionalAreas: {},
-			Purchase: {},
-			HotPerformance:[]
+      FunctionalAreas: {},
+      Purchase: {},
+      HotPerformance: [],
+      ListShows: [],
+      VocalConcert: []
     }
   },
   async mounted () {
@@ -75,14 +85,16 @@ export default {
     // 获取工厂服务信息 // 获取推荐商品
     let result = await reqMessage()
     // 用已有变量接数组
-    this.arrImg = result.msiteDetail.Rotation
-    // console.log(this.arrImg)
     this.buttons = result.msiteDetail.button
-		// console.log(this.buttons)
-		this.functionalAreas = result.msiteDetail.FunctionalArea
-		// console.log(this.functionalArea)
-		this.HotPerformance = result.msiteDetail.HotPerformance
+    // console.log(this.buttons)
+    this.FunctionalAreas = result.msiteDetail.FunctionalArea
+    // console.log(this.FunctionalArea)
+    this.HotPerformance = result.msiteDetail.HotPerformance
     // console.log(this.HotPerformance)
+    this.Purchase = result.msiteDetail.Purchase
+    // console.log(this.Purchase)
+    this.ListShows = result.msiteDetail.VocalConcert
+    // console.log(this.ListShows)
 
   },
   components: {
@@ -90,46 +102,42 @@ export default {
     FunctionalArea,
     SwiperFirst,
     Header,
-		Purchase,
-		HotPerformance
+    Purchase,
+    HotPerformance,
+    ListShows
   }
 }
 </script>
 <style lang='stylus' rel='stylesheet/stylus'>
-.warrper
-  width 100%
-  height 100%
-  .msite
-    width 100%
-    position fixed
-    .msite-header
-      width 100%
-      height 30px
-      position fixed
-      top 0
-      left 0
-      z-index 5
-    .msite-sectionSwiperOne
-      width 100%
-      height 196px
-    .msite-button
-      width 100%
-      height 105px
-    .msite-Purchase
-      width 100%
-      height 215px
-      background-color red
-    .msite-FunctionalArea
-      width 100%
-      height 220px
-		.msite-HotPerformance
-			width 100%
-      height 250px
-			background-color blue
-	.blank
+.orange-msite
+	width 100%
+	height 100%
+	.warrper
 		width 100%
-		height 60px
-		text-align center
-		line-height 60px
-		font-size 30px
+		height 100%
+		.msite
+			width 100%
+			.msite-header
+				width 100%
+				height 30px
+				position fixed
+				top 0
+				left 0
+				z-index 5
+			.msite-sectionSwiperOne
+				width 100%
+				height 196px
+			.msite-button
+				width 100%
+				height 105px
+			.msite-Purchase
+				width 100%
+				height 215px
+				// background-color red
+			.msite-FunctionalArea
+				width 100%
+				height 220px
+			.msite-HotPerformance
+				width 100%
+				height 250px
 </style>
